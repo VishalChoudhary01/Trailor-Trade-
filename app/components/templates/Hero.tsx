@@ -34,7 +34,7 @@ const Hero = () => {
             </p>
             <div className="flex flex-col gap-y-3">
               <div className="flex gap-x-2 md:justify-start justify-center  ">
-                <Input placeholderText="Enter your email to get updates" inputStyle="outline-none placeholder:italic placeholder:text-gray-400  border border-[#C3C3C3] max-w-[342px] max-h-[46px] xl:w-[342px] xl:h-[46px] rounded-[6px] p-2 caret-gray-500 " />
+                <Input placeholder="Enter your email to get updates" className="outline-none placeholder:italic placeholder:text-gray-400  border border-[#C3C3C3] max-w-[342px] max-h-[46px] xl:w-[342px] xl:h-[46px] rounded-md p-2 caret-gray-500 " />
                 <Button
                   buttonText="Submit"
                   buttonStyle={`flex items-center gap-x-2 rounded-[5px] text-[15px] max-w-[127px] md:w-[127px] md:px-0 px-4 justify-center h-[42px] bg-[#1959AC] text-white  `}
@@ -51,7 +51,7 @@ const Hero = () => {
                 <Image
                   src={bluetick}
                   alt="checked"
-                  className="md:w-[30px] md:h-[30px] w-[14px] h-[14px]"
+                  className="md:w-[30px] md:h-[30px] w-3.5 h-3.5"
                 />
                 <p className="md:text-[15px] text-[12px]">No credit card required!</p>
               </motion.div>
@@ -68,7 +68,7 @@ const Hero = () => {
           <Image src={hero} alt="hero" className="object-fill" />
         </motion.div>
       </div>
-      <div className="absolute bottom-0 w-full h-[60px] md:block hidden bg-gradient-to-t from-white to-transparent  "></div>
+      <div className="absolute bottom-0 w-full h-[60px] md:block hidden bg-linear-to-l from-white to-transparent  "></div>
     </section>
   );
 };
