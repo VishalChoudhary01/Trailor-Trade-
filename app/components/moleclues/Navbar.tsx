@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { IoIosArrowDown, IoMdMenu, IoMdClose } from "react-icons/io";
 import { AnimatePresence, motion } from 'motion/react';
 import Button from '../atoms/Button';
+import TrailorTradeLogo from '@/app/components/atoms/TrailorTradeLogo'
 
 const menuItems = [
   { 
@@ -59,7 +60,7 @@ const Navbar = () => {
             ? 'bg-white/95 backdrop-blur-md rounded-full mx-auto mt-4 shadow-lg border border-gray-200' 
             : 'bg-transparent'
         }`}>
-          {/* <Logo scrolled={isScrolled} /> */}
+          <TrailorTradeLogo scrolled={isScrolled} />
           
           {/* Desktop Menu */}
           <ul className='md:flex hidden gap-x-[3.2rem] items-center'>

@@ -1,7 +1,5 @@
 import React from 'react';
-import Logo from '../atoms/Logo';
-import { Roboto_Condensed } from 'next/font/google';
-import { Inter } from 'next/font/google';
+import Logo from '../atoms/TrailorTradeLogo';
 import Button from '../atoms/Button';
 import { FaArrowRightLong } from "react-icons/fa6";
 

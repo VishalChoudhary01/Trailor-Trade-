@@ -7,7 +7,7 @@ interface LogoProps {
   scrolled?: boolean
 }
 
-const Logo = ({ scrolled }: LogoProps) => {
+const TrailorTradeLogo = ({ scrolled }: LogoProps) => {
   return (
     <div
       className={`
@@ -27,4 +27,4 @@ const Logo = ({ scrolled }: LogoProps) => {
   )
 }
 
-export default Logo
+export default TrailorTradeLogo
