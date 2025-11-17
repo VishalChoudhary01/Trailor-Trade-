@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Logo from '../atoms/Logo';
 import { IoIosArrowDown, IoMdMenu, IoMdClose } from "react-icons/io";
 import { AnimatePresence, motion } from 'motion/react';
 import Button from '../atoms/Button';
@@ -60,7 +59,7 @@ const Navbar = () => {
             ? 'bg-white/95 backdrop-blur-md rounded-full mx-auto mt-4 shadow-lg border border-gray-200' 
             : 'bg-transparent'
         }`}>
-          <Logo scrolled={isScrolled} />
+          {/* <Logo scrolled={isScrolled} /> */}
           
           {/* Desktop Menu */}
           <ul className='md:flex hidden gap-x-[3.2rem] items-center'>
