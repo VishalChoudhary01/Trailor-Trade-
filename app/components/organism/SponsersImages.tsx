@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Roboto_Condensed } from "next/font/google";
 
 // Import all brand logos
 import Ather from "../../../public/images/brands/AtherLogo.png";
@@ -17,10 +16,7 @@ import Ulta from "../../../public/images/brands/Ultraviolette.png";
 import royal from "../../../public/images/brands/royal.png";
 import revolt from "../../../public/images/brands/royal.png";
 
-const roboto_Condensed = Roboto_Condensed({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+
 
 const SponsersImages = () => {
   const brands = [
@@ -46,7 +42,7 @@ const SponsersImages = () => {
   return (
     <section className="w-full py-10 max-w-[1112px] mx-auto">
       <div
-        className={`text-center mb-6 flex justify-center ${roboto_Condensed.className}`}
+        className={`text-center mb-6 flex justify-center font-roboto_condensed`}
       >
         <h2 className="md:text-[42px] max-w-[665px] leading-9 text-[30px] font-bold text-black uppercase">
           Trusted by Leading Motorcycle Brands.

@@ -72,7 +72,7 @@ const Bikes = () => {
   />
 </motion.div>
             </div>
-            <div className="bg-linear-90 from-[#043898] via-[#079902] to-[#170041] md:w-[96%] w-full md:h-[20px] h-[12px] absolute bottom-0"></div>
+            <div className="bg-linear-90 from-[#043898] via-[#079902] to-[#170041] md:w-[96%] w-full md:h-5 h-3 absolute bottom-0"></div>
         </div>
 
     </section>

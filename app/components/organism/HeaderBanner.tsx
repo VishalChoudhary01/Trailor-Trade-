@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../atoms/TrailorTradeLogo';
+import TrailorTradeLogo from '../atoms/TrailorTradeLogo';
 import Button from '../atoms/Button';
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -27,7 +27,7 @@ function HeaderBanner({
       style={{ backgroundImage: `url(${backgroundImageSet})` }}
     >
       <div className="w-full h-full px-8 py-6">
-        <Logo />
+        <TrailorTradeLogo />
         <div className="w-full h-full text-center flex items-center justify-center">
           <div className="text-white flex flex-col items-center md:gap-y-5 gap-y-3 md:py-1 pt-3 ">
             <h1
