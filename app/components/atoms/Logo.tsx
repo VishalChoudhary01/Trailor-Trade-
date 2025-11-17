@@ -1,13 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Russo_One } from 'next/font/google'
-import { FaCog } from 'react-icons/fa'
 
-const russoOne = Russo_One({
-  subsets: ['latin'],
-  weight: ['400']
-})
 
 interface LogoProps {
   scrolled?: boolean
@@ -21,7 +15,6 @@ const Logo = ({ scrolled }: LogoProps) => {
        xl:text-[2rem] lg:text-[1.8rem] md:text-[1.5rem] text-[1.25rem] font-semibold tracking-wider
         uppercase flex items-center justify-center gap-3
         ${scrolled?"bg-transparent":"bg-stone-200/35 backdrop-blur-xl"}
-        ${russoOne.className}
       `}
     >
       
