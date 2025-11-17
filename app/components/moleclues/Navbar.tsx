@@ -1,6 +1,6 @@
 "use client"
-import React, { useState, useEffect } from 'react'
-import Logo from '../atoms/Logo'
+import React, { useState, useEffect } from 'react';
+import Logo from '../atoms/Logo';
 import { IoIosArrowDown, IoMdMenu, IoMdClose } from "react-icons/io";
 import { AnimatePresence, motion } from 'motion/react';
 import Button from '../atoms/Button';
