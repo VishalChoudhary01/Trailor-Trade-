@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className={`flex justify-center`}>
         <nav className={`fixed z-30 ${isScrolled ? "w-[95%]" : "w-full"} flex items-center justify-between xl:px-[6.5rem] py-1 px-2 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/95 backdrop-blur-md rounded-full mx-auto mt-4 shadow-lg border border-gray-200' 
+            ? 'bg-white/70 backdrop-blur-md rounded-full mx-auto mt-4 shadow-lg border border-gray-200' 
             : 'bg-transparent'
         }`}>
           <TrailorTradeLogo scrolled={isScrolled} />

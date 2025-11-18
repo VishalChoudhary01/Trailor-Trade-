@@ -15,13 +15,13 @@ function HeaderContent({
 }: HeaderContentProps) {
   return (
     <div className=" space-y-3 md:text-justify text-center max-w-[800px] ">
-      <h2 className={`text-[#0546D2]  font-semibold  lg:text-[24px] md:text-[20px] text-[18px]`}>
+      <h2 className={`text-head2  font-semibold  lg:text-head2desktop md:text-[20px] text-head2mobile font-roboto_condensed`}>
         {primaryContent}
       </h2>
-      <h3 className={`text-[#222222] uppercase text-[42px] font-roboto_condensed  font-bold`}>
+      <h3 className={`text-head1 uppercase text-head1mobile md:text-head1desktop font-roboto_condensed  font-bold`}>
         {secondaryContent}
       </h3>
-      <p className='lg:text-[19px] md:text-[15px] text-[14px] text-neutral-800'>{descript}</p>
+      <p className='md:text-head3desktop  text-head3mobile text-head3'>{descript}</p>
     </div>
   );
 }

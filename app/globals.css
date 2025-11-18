@@ -1,10 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
 @import "tailwindcss";
+:root{
+  --head1:#222222;
+  --head2:#0546D2;
+  --head3:#28292cbb;
+  --head4:#3A3D46;
+  --para1:#4F4F4F;
+  --para2:#6C6C6C;
+  --para3:#828282;
+  --para4:#B0B0B0;
+}
+
+@theme{
+  --text-head1desktop: 42px;
+  --text-head2desktop: 24px;
+  --text-head3desktop: 18px;
+  --text-head4desktop: 16px;
+  --text-head1mobile: 1.6rem;
+  --text-head2mobile: 1.2rem;
+  --text-head3mobile: 1.02rem;
+  --text-head4mobile: 1rem;
+  --text-para1desktop: 18px;
+  --text-para2desktop: 16px;
+  --text-para3desktop: 14px;
+  --text-para4desktop: 12px;
+  --text-para1mobile: 0.9rem;
+  --text-para2mobile: 1rem;
+  --text-para3mobile: 0.875rem;
+  --text-para4mobile: 0.75rem;
+}
 
 @theme inline {
   --font-roboto_condensed: 'Roboto Condensed', sans-serif;
   --font-inter: 'Inter', sans-serif;
   --font-ruso: 'Russo One', sans-serif;
+  --color-head1: var(--head1);
+  --color-head2: var(--head2);
+  --color-head3: var(--head3);
+  --color-head4: var(--head4);
+  --color-para1: var(--para1);
+  --color-para2: var(--para2);
+  --color-para3: var(--para3);
+  --color-para4: var(--para4);
+
 }
 
 .clip-diagonal {
