@@ -1,39 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-
-// Import all brand logos
-import Ather from "../../../public/images/brands/AtherLogo.png";
-import Bajaj from "../../../public/images/brands/Bajaj.png";
-import TORK from "../../../public/images/brands/TORK.png";
-import Hero from "../../../public/images/brands/Hero.png";
-import Honda from "../../../public/images/brands/Honda.png";
-import Ola from "../../../public/images/brands/Ola-Electric.png";
-import KTM from "../../../public/images/brands/KTM.png";
-import TVS from "../../../public/images/brands/TVS.png";
-import Yamaha from '../../../public/images/brands/yamaha.png';
-import Ulta from "../../../public/images/brands/Ultraviolette.png";
-import royal from "../../../public/images/brands/royal.png";
-import revolt from "../../../public/images/brands/royal.png";
-
-
+import { motion } from "motion/react";
+import brands from "@/app/utils/data/sponsers";
 
 const SponsersImages = () => {
-  const brands = [
-    { name: "Hero", image: Hero },
-    { name: "Honda", image: Honda },
-    { name: "Bajaj", image: Bajaj },
-    { name: "TVS", image: TVS },
-    { name: "Royal Enfield", image: royal },
-    { name: "Yamaha", image: Yamaha },
-    { name: "KTM", image: KTM },
-    { name: "Ather", image: Ather },
-    { name: "OLA ELECTRIC", image: Ola },
-    { name: "Revolt", image: revolt },
-    { name: "Ultraviolette", image: Ulta },
-    { name: "TORK", image: TORK },
-  ];
-
   // Create three distinct rows for mobile
   const row1Brands = [...brands.slice(0, 4), ...brands.slice(0, 4), ...brands.slice(0, 4)];
   const row2Brands = [...brands.slice(4, 8), ...brands.slice(4, 8), ...brands.slice(4, 8)];
@@ -44,9 +15,13 @@ const SponsersImages = () => {
       <div
         className={`text-center mb-6 flex justify-center font-roboto_condensed`}
       >
-        <h2 className="md:text-[42px] max-w-[665px] leading-9 text-[30px] font-bold text-black uppercase">
+        <motion.h2
+         initial={{ opacity: 0, y: 20 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.5, delay: 0.5 }}
+        className="md:text-head1desktop max-w-[665px] leading-9 text-[30px] font-bold text-black uppercase">
           Trusted by Leading Motorcycle Brands.
-        </h2>
+        </motion.h2>
       </div>
 
       {/* Mobile View */}
@@ -122,36 +97,60 @@ const SponsersImages = () => {
       <div className="hidden md:flex flex-col items-center md:my-[115px] md:gap-y-9">
         <div className="flex justify-between md:w-[950px]">
           {brands.slice(0, 4).map((brand, index) => (
-            <div key={index} className="flex items-center justify-center relative">
+            <motion.div
+            viewport={{once:true}}
+              initial={{ opacity: 0,scale: 10 }}
+              whileInView={{ opacity: 1 , scale: 1 }}
+              transition={{ duration: 0.5, delay:index + 0.4 * 0.6 }} 
+              
+             key={index} className="flex items-center justify-center relative">
               <Image
                 src={brand.image}
                 alt={brand.name}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="flex justify-between md:w-[1112px]">
+        <motion.div
+        initial={{ opacity: 0,y: 20 }}
+        whileInView={{ opacity: 1 , y: 0 }}
+        transition={{ duration: 0.1 }}  
+        className="flex justify-between md:w-[1112px]">
           {brands.slice(4, 8).map((brand, index) => (
-            <div key={index} className="flex items-center justify-center relative">
+            <motion.div
+             viewport={{once:true}}
+              initial={{ opacity: 0,scale: 10 }}
+              whileInView={{ opacity: 1 , scale: 1 }}
+              transition={{ duration: 0.5, delay:index + 0.4 * 0.8 }} 
+                key={index} className="flex items-center justify-center relative">
               <Image
                 src={brand.image}
                 alt={brand.name}
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="flex justify-between md:w-[1040px]">
+        <motion.div
+        initial={{ opacity: 0,y: 20 }}
+        whileInView={{ opacity: 1 , y: 0 }}
+        transition={{ duration: 0.1 }} 
+        className="flex justify-between md:w-[1040px]">
           {brands.slice(8, 12).map((brand, index) => (
-            <div key={index} className="flex items-center justify-center relative">
+            <motion.div
+            viewport={{once:true}}
+              initial={{ opacity: 0,scale: 10 }}
+              whileInView={{ opacity: 1 , scale: 1 }}
+              transition={{ duration: 0.5, delay:index + 0.4 * 2 }} 
+            key={index} className="flex items-center justify-center relative">
               <Image
                 src={brand.image}
                 alt={brand.name}
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

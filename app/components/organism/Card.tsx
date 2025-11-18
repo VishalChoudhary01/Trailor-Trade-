@@ -1,6 +1,7 @@
 'use client'
 
 import Image, { StaticImageData } from 'next/image'
+import { motion } from 'motion/react'
 
 type CardProps = {
   image: StaticImageData
@@ -11,7 +12,12 @@ type CardProps = {
 
 function Card({ image, title, description, link = "#" }: CardProps) {
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden shadow-md bg-white border border-gray-200 hover:scale-105 hover:shadow-lg transition-all ">
+    <motion.div
+      initial={{ opacity: 0, x: 80 ,filter: 'blur(24px)',background:"white"}}
+      whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
+      transition={{ duration: 0.4,delay: 0.5 }} 
+    
+    className="max-w-sm rounded-2xl overflow-hidden shadow-md bg-white border border-gray-200 hover:scale-105 hover:shadow-lg transition-all ">
       {/* Image */}
       <div className="relative overflow-hidden">
         <Image
@@ -36,7 +42,7 @@ function Card({ image, title, description, link = "#" }: CardProps) {
           Learn More
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

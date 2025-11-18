@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="w-full">
+      <main className="w-full overflow-hidden"> 
         <Hero />
         <div className="bg-hero-custom">
           <Bikes />

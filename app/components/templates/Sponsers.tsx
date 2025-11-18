@@ -4,43 +4,9 @@ import Bikerain from '../../../public/images/banner/bikerain.png';
 import HeaderContent from "../organism/HeaderContent";
 import SponsersImages from "../organism/SponsersImages";
 import Card from "../organism/Card";
-import sportMotorcycle from '../../../public/images/cards/sportmotorcycle.jpg';
-import adventureBike from '../../../public/images/cards/moutainbike.jpg';
-import comfortableRider from '../../../public/images/cards/comfortbike.jpg';
-import touringBike from '../../../public/images/cards/tourbike.jpg';
+import { performanceCards } from "@/app/utils/data";
 
 const Sponsers = () => {
- 
-
-  // Array for the performance cards
-  const performanceCards = [
-    {
-      image: sportMotorcycle,
-      title: "PERFORMANCE ENGINEERED",
-      description: "Experience responsive handling and smooth power delivery. Our precision-crafted engines deliver optimal performance across all riding conditions with reliable, consistent power.",
-      link: "#"
-    },
-    {
-      image: adventureBike,
-      title: "ADVENTURE READY",
-      description: "Built to conquer diverse terrains with confidence. Advanced suspension systems and rugged construction ensure optimal control whether you're navigating city streets or mountain passes.",
-      link: "#"
-    },
-    {
-      image: comfortableRider,
-      title: "RIDER FOCUSED",
-      description: "Designed around the rider with ergonomic comfort and intuitive controls. Enjoy longer rides without compromise to comfort, with optimized seating and handling.",
-      link: "#"
-    },
-    {
-  image: touringBike, 
-  title: "LONG DISTANCE COMFORT",
-  description: "Engineered for those who seek long-distance adventures. With enhanced comfort, spacious seating, and optimized aerodynamics, experience effortless travel over long stretches.",
-  link: "#"
-}
-
-
-  ];
 
   return (
     <section className="py-20">
@@ -64,7 +30,7 @@ const Sponsers = () => {
           descript="Explore the latest from the riding community — from expert riding tips and travel stories to the newest in EV tech and performance upgrades."
         />
         
-        <div className="w-full md:px-24 flex justify-center">
+        <div className="w-full md:px-24 flex justify-center md:mt-20 mt-16 px-8 ">
           <div className="grid grid-cols-1 md:grid-cols-2  gap-10">
             {performanceCards.map((card, index) => (
               <Card
