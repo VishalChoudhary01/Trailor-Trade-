@@ -29,7 +29,10 @@ const Bikes = () => {
             {/* Feature Items */}
             <div className="md:pt-14 pt-10  max-w-[594px] space-y-6">
               {featuresList.map((item, index) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 50, filter: "blur(50px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
                   key={index}
                   className="flex md:items-center items-start md:gap-x-7 gap-x-2 "
                 >
@@ -41,11 +44,15 @@ const Bikes = () => {
                   <p className="md:w-[380px] md:text-para1desktop text-para1mobile text-justify leading-tight tracking-tight">
                     {item.text}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
             {/* CTA */}
-            <div className="flex w-full md:justify-start justify-center gap-x-6 absolute md:-bottom-10 -bottom-16">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }} 
+            className="flex w-full md:justify-start justify-center gap-x-6 absolute md:-bottom-10 -bottom-16">
               <Button
                 buttonText={`Explore Models`}
                 buttonStyle={`font-inter bg-[#1959AC] rounded-[5px] md:text-para2desktop text-para1mobile text-white flex items-center gap-x-2 md:px-3.5 md:py-1.5 px-3 py-1.5`}
@@ -53,10 +60,10 @@ const Bikes = () => {
               />
               <Button
                 buttonText={`123456789`}
-                buttonStyle={`font-inter text-[#1959AC] md:text-para2desktop text-para1mobile  flex items-center gap-x-2 px-2 py-1`}
+                buttonStyle={`font-inter text-[#1959AC] outline outline-[#1959AC] rounded-sm  md:text-para2desktop text-para1mobile  flex items-center gap-x-2 md:px-7 px-6 py-1`}
                 leftIcon={<BsTelephone />}
               />
-            </div>
+            </motion.div>
           </motion.div>
           {/* Right */}
           <motion.div

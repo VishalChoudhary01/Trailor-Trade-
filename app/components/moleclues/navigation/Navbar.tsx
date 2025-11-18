@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button 
               buttonText='Book Test Ride' 
-              buttonStyle={`text-[15px] bg-[#1959AC] lg:px-[2.625rem] py-[0.813rem] rounded-full shadow-md text-white font-inter font-bold hover:bg-[#164a8f] transition-colors`} 
+              buttonStyle={`text-[15px] bg-[#1959AC] lg:px-[2.625rem] py-[0.813rem] rounded-full shadow-md text-white font-inter font-bold hover:bg-[#164a8f] transition-all duration-200`} 
             />
           </div>
           
