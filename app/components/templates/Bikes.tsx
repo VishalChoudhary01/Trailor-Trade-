@@ -2,30 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import BikeImage from "../../../public/images/hero/FZBikes.png";
-
-import Biker1 from "../../../public/images/features/biker1.png"; 
-import Biker2 from "../../../public/images/features/handshake.png";
-import Biker3 from "../../../public/images/features/threeHand.png";
 import HeaderContent from "../organism/HeaderContent";
 import Button from "../atoms/Button";
-import { Inter } from "next/font/google";
 import { FaArrowRight } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { motion } from "motion/react";
+import { featuresList } from "@/app/utils/data/index";
 
-
-const featuresList=[{
-            img: Biker1,
-            text: "Every model is built for speed and control, optimized to dominate highways and urban roads alike.",
-          }, {
-            img: Biker2,
-            text: "From sport to cruiser to touring — explore our diverse lineup designed to suit every riding style.",
-          }, {
-            img: Biker3,
-            text: "Ergonomic design ensures comfort on long rides without sacrificing style or performance.",
-          }]
-
-const inter = Inter({ subsets: ["latin"] });
 
 const Bikes = () => {
   return (
@@ -52,8 +35,8 @@ const Bikes = () => {
             <div
             
              className="flex w-full md:justify-start justify-center gap-x-6 absolute md:-bottom-10 -bottom-16">
-                <Button buttonText={`Explore Models`} buttonStyle={`${inter.className} bg-[#1959AC] rounded-[5px] text-[15px] text-white flex items-center gap-x-2 md:px-3.5 md:py-1.5 px-3 py-1.5`} rightIcon={<FaArrowRight/>}/>
-                <Button buttonText={`123456789`} buttonStyle={`${inter.className} text-[#1959AC]  flex items-center gap-x-2 px-2 py-1`} leftIcon={<BsTelephone/>}/>
+                <Button buttonText={`Explore Models`} buttonStyle={`font-inter bg-[#1959AC] rounded-[5px] text-[15px] text-white flex items-center gap-x-2 md:px-3.5 md:py-1.5 px-3 py-1.5`} rightIcon={<FaArrowRight/>}/>
+                <Button buttonText={`123456789`} buttonStyle={`font-inter text-[#1959AC]  flex items-center gap-x-2 px-2 py-1`} leftIcon={<BsTelephone/>}/>
             </div>
             </motion.div>
             {/* Right */}

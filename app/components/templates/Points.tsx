@@ -3,25 +3,8 @@ import HeaderContent from '../organism/HeaderContent'
 import Image from 'next/image'
 import guys from '../../../public/images/guys.png';
 import sureIcon from '../../../public/icons/Sure-Drive.svg'
+import { pointsFeaturesList } from '@/app/utils/data/index';
 
-const featuresList=[
-          {
-            img: sureIcon,
-            heading: "Trusted by 50,000+ Riders Worldwide.",
-            descp:"We’ve earned a reputation for quality, trust, and performance on every road we ride."
-          }, 
-          {
-            img: sureIcon,
-            heading: "World-Class Service Network.",
-            descp:"We offer fast, expert service with certified mechanics at over 300+ partner locations."
-          }, 
-          {
-            img: sureIcon,
-            heading: "Custom Builds & Upgrades",
-            descp:"Tailor your machine to match your identity with custom parts and performance kits."
-          }, 
-        
-        ]
 
 const Points = () => {
   return (
@@ -34,10 +17,10 @@ const Points = () => {
                 {/* feature Points */}
                 <div className='max-w-[762px] p-2'>
                 <div className='md:space-y-5'>
-                  {featuresList.map((item,index)=>(
+                  {pointsFeaturesList.map((item,index)=>(
                     <div key={index} className='flex gap-x-2.5  '>
                       <div className='relative md:w-[35px] md:h-[35px] w-[45px] h-[45px] '>
-                      <Image src={item.img} alt='sure' className='absolute w-full h-full' />
+                      <Image src={sureIcon} alt='sure' className='absolute w-full h-full' />
                       </div>
                     <div className='md:space-y-2'>
                       <h4 className='text-[#151515] md:text-[1rem] text-[15px]'>{item.heading}</h4>

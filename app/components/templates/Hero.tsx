@@ -18,15 +18,15 @@ const Hero = () => {
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="md:w-[60%] w-full   flex justify-center items-center md:pt-24 pt-20  md:px-0 px-2.5"
+          className="md:w-[60%] w-full   flex justify-center items-center md:pt-24 pt-24  md:px-0 px-2.5"
         >
           <div className="md:w-[696px] md:space-y-9 space-y-8">
             <h1
-              className={` max-w-[528px] md:h-[140px]  md:leading-16 leading-11 md:text-justify text-center font-bold xl:text-[64px] lg:text-[62px] md:text-[55px] font-roboto_condensed  text-[40px]`}
+              className={` max-w-[528px] md:h-[140px]  md:leading-16 leading-11 md:text-justify text-center font-bold xl:text-[64px] lg:text-[62px] md:text-[55px] font-roboto_condensed  text-[30px]`}
             >
               Experience the Thrill of the Ride
             </h1>
-            <p className={`max-w-[520px] md:text-justify text-center font-inter`}>
+            <p className={`max-w-[520px] md:text-justify text-center font-inter md:px-0 px-4 md:text-[18px] text-[14px] md:leading-7 leading-6 text-[#4F4F4F]`}>
               Join thousands of riders who trust our bikes for speed, power, and
               reliability. From city streets to open highways, feel the rush
               like never before. Explore our latest models, exclusive gear, and
@@ -34,41 +34,41 @@ const Hero = () => {
             </p>
             <div className="flex flex-col gap-y-3">
               <div className="flex gap-x-2 md:justify-start justify-center  ">
-                <Input placeholder="Enter your email to get updates" className="outline-none placeholder:italic placeholder:text-gray-400  border border-[#C3C3C3] max-w-[342px] max-h-[46px] xl:w-[342px] xl:h-[46px] rounded-md p-2 caret-gray-500 " />
+                <Input placeholder="Enter your email to get updates" className="outline-none placeholder:italic placeholder:text-gray-400  border border-[#C3C3C3] max-w-[342px] max-h-[46px] xl:w-[342px] w-[228px] h-[45px] xl:h-[46px] rounded-md p-2 caret-gray-500 md:text-lg text-[14px]" />
                 <Button
                   buttonText="Submit"
-                  buttonStyle={`flex items-center gap-x-2 rounded-[5px] text-[15px] max-w-[127px] md:w-[127px] md:px-0 px-4 justify-center h-[42px] bg-[#1959AC] text-white  `}
-                  rightStyle="text-[15px]"
+                  buttonStyle={`flex items-center gap-x-2 rounded-[5px] md:text-[15px] text-[14px] max-w-[127px] md:w-[127px] w-[100px] h-[45px] md:px-0 px-4 justify-center bg-[#1959AC] text-white  `}
+                  rightStyle="md:text-[15px] text-[14px]"
                   rightIcon={<FaArrowRight />}
                 />
               </div>
               <motion.div
                 initial={{ y: 180, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className={`flex items-center md:justify-start justify-center md:gap-x-3 gap-x-1.5  text-[15px]`}
+                className={`flex items-center md:justify-start justify-center md:gap-x-2 gap-x-1.5  text-[15px]`}
               >
                 <Image
                   src={bluetick}
                   alt="checked"
-                  className="md:w-[30px] md:h-[30px] w-3.5 h-3.5"
+                  className="md:size-5 size-[18px] object-contain"
                 />
-                <p className="md:text-[15px] text-[12px]">No credit card required!</p>
+                <p className="md:text-[15px] text-[12px] text-[#1959AC]">No credit card required!</p>
               </motion.div>
             </div>
           </div>
         </motion.div>
         {/* right */}
         <motion.div
-          initial={{ x: 120, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ x: 120, opacity: 0,filter: 'blur(250px)',background: 'white' }}
+          whileInView={{ x: 0, opacity: 1, filter: 'blur(0px)', background: 'rgba(255, 255, 255, 0)' }}
+          transition={{ duration: 0.9 }}
           className="w-[40%] h-auto md:block hidden clip-diagonal "
         >
           <Image src={hero} alt="hero" className="object-fill" />
         </motion.div>
       </div>
-      <div className="absolute bottom-0 w-full h-[60px] md:block hidden bg-linear-to-l from-white to-transparent  "></div>
+      <div className="absolute bottom-0 w-full h-[60px] md:block hidden bg-linear-to-t from-white to-transparent  "></div>
     </section>
   );
 };
