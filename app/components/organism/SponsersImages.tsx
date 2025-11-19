@@ -6,9 +6,9 @@ import brands from "@/app/utils/data/sponsers";
 
 const SponsersImages = () => {
   // Create three distinct rows for mobile
-  const row1Brands = [...brands.slice(0, 4), ...brands.slice(0, 4), ...brands.slice(0, 4)];
-  const row2Brands = [...brands.slice(4, 8), ...brands.slice(4, 8), ...brands.slice(4, 8)];
-  const row3Brands = [...brands.slice(8, 12), ...brands.slice(8, 12), ...brands.slice(8, 12)];
+  const row1Brands = [...brands.slice(0, 4), ...brands.slice(0, 4), ...brands.slice(0, 4), ...brands.slice(0, 4)];
+  const row2Brands = [...brands.slice(4, 8), ...brands.slice(4, 8), ...brands.slice(4, 8), ...brands.slice(4, 8)];
+  const row3Brands = [...brands.slice(8, 12), ...brands.slice(8, 12), ...brands.slice(8, 12), ...brands.slice(8, 12)];
 
   return (
     <section className="w-full py-10 max-w-[1112px] mx-auto">
@@ -99,7 +99,7 @@ const SponsersImages = () => {
           {brands.slice(0, 4).map((brand, index) => (
             <motion.div
             viewport={{once:true}}
-              initial={{ opacity: 0,scale: 10 }}
+              initial={{ opacity: 0,scale: 15 }}
               whileInView={{ opacity: 1 , scale: 1 }}
               transition={{ duration: 0.5, delay:index + 0.4 * 0.6 }} 
               
