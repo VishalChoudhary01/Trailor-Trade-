@@ -11,7 +11,7 @@ import Footer from "./components/moleclues/Footer";
 export default function Home() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="w-full overflow-hidden"> 
         <Hero />
         <div className="bg-hero-custom">

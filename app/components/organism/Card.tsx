@@ -17,13 +17,13 @@ function Card({ image, title, description, link = "#" }: CardProps) {
       whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
       transition={{ duration: 0.4,delay: 0.5 }} 
     
-    className="max-w-sm rounded-2xl overflow-hidden shadow-md bg-white border border-gray-200 hover:scale-105 hover:shadow-lg transition-all ">
+    className="max-w-sm md:rounded-2xl rounded-lg overflow-hidden shadow-md bg-white border border-gray-200 hover:scale-105 hover:shadow-lg transition-all ">
       {/* Image */}
       <div className="relative overflow-hidden">
         <Image
           src={image}
           alt={title}
-          className="w-full h-[180px] object-cover rounded-t-2xl transition-transform cursor-pointer duration-500 ease-in-out transform hover:scale-125"
+          className="w-full h-[180px] object-cover md:rounded-t-2xl rounded-t-lg transition-transform cursor-pointer duration-500 ease-in-out transform hover:scale-125"
         />
       </div>
 
