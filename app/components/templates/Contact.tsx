@@ -46,9 +46,9 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const baseInputStyle = "bg-[#f4f4f4] focus:outline-none focus:ring md:text-para2desktop text-para3mobile focus:ring-gray-500 transition-all px-3 caret-gray-500 ring ring-[#9f9f9f] md:h-[46px] h-[38px] w-full md:w-[535px] rounded-[6px]";
+  const baseInputStyle = "bg-[#f4f4f4] focus:outline-none focus:ring md:text-para2desktop text-para3mobile focus:ring-gray-500 transition-all px-3 caret-gray-500 ring ring-[#9f9f9f] md:h-[46px] h-[38px] w-full md:w-[565px] rounded-[6px]";
   const textAreaStyle = "bg-[#f4f4f4] focus:outline-none focus:ring md:text-para2desktop text-para3mobile focus:ring-gray-500 transition-all px-3 caret-gray-500 ring ring-[#9f9f9f] rounded-[6px] w-full";
-  const containerStyle = 'flex flex-col w-full md:max-w-[535px] gap-y-2';
+  const containerStyle = 'flex flex-col w-full md:max-w-[555px] gap-y-2';
   const labelStyle = 'font-inter md:text-para2desktop text-para3mobile text-[#0E0D0D]';
 
   return (
@@ -61,7 +61,7 @@ const Contact = () => {
         <h2 className='text-[#222222] font-bold text-3xl md:text-head1desktop text-head1mobile font-roboto_condensed mb-10 md:mb-20 tracking-wide'>REQUEST A QUOTE</h2>
         
         <div className='w-full flex justify-center text-left'>
-          <form onSubmit={handleSubmit} className='w-full flex justify-center flex-col items-center max-w-full'>
+          <form onSubmit={handleSubmit} className='w-full flex justify-center flex-col items-center max-w-full '>
             <div className='grid grid-cols-1 md:grid-cols-2 justify-center w-full md:max-w-6xl gap-x-6 gap-y-6 md:gap-y-9 md:px-0 px-6'>
               <Input 
                 label='Name' 

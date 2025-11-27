@@ -1,101 +1,145 @@
+"use client";
+import Image from "next/image";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+// Import actual images
+import bike1 from "../../../public/images/mosic_grid_banner/bike1.png";
+import bike2 from "../../../public/images/mosic_grid_banner/bike2.png";
+import bike3 from "../../../public/images/mosic_grid_banner/bike3.png";
+import bike4 from "../../../public/images/mosic_grid_banner/bike4.png";
+import horibike1 from "../../../public/images/mosic_grid_banner/horibike.png";
+import horibike2 from "../../../public/images/mosic_grid_banner/horibike2.png";
+import horibike3 from "../../../public/images/mosic_grid_banner/horibike3.png";
+import horibike4 from "../../../public/images/mosic_grid_banner/horibike4.png";
+import Button from "../atoms/Button";
+
 export default function MotorcycleMosaic() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header Section */}
-      <div className="px-8 py-12">
-        <p className="text-sm font-semibold text-gray-600 mb-6">NO LIMITS</p>
+    <section className="w-full bg-gray-50 py-12 lg:py-16">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-14">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Left Content */}
-          <div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              LOREM IPSUM DOLOR SIT AMET
-            </h1>
-            <p className="text-gray-700 text-lg mb-8 max-w-lg">
-              Lorem ipsum dolor sit amet consectetur. Nisl faucibus vitae porttitor pharetra tempor quis arcu. Ipsum nullam.
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded flex items-center gap-2 transition-colors">
-              Loerum Ipsum
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
+        {/* Main Grid - 2 Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          {/* ========== LEFT SIDE ========== */}
+          <div className=" flex flex-col gap-y-9 ">
+            
+            {/* Top Section - Content + Small Portrait Image */}
+            <div className="grid grid-cols-12  gap-x-12 ">
+              {/* Text Content */}
+              <div className="col-span-11 lg:col-span-9 space-y-8  ">
+                <p className="text-[20px] font-inter text-gray-500 tracking-widest font-semibold  uppercase">
+                  NO LIMITS
+                </p>
+                
+                <h1 className="md:text-5xl font-bold text-head1 uppercase [word-spacing:0.2em] ">
+                  PUSH BEYOND CONVENTIONAL BOUNDARIES
+                </h1>
+                
+                <p className="text-para1 text-para2desktop leading-relaxed [word-spacing:0.5em] pr-2">
+                 Discover motorcycles engineered to defy expectations. With cutting-edge technology and precision craftsmanship, we deliver unmatched performance that transforms every ride into an extraordinary experience.
+                </p>
+                
+                  <Button buttonText="Book Test Ride" buttonStyle="bg-[#1959AC] hover:bg-blue-700 text-white font-semibold px-7 py-3 rounded-md flex items-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg w-fit" rightIcon={<FaArrowRightLong  />} rightStyle="text-lg" />
+               
+              </div>
+
+              {/* Small Portrait Image - bike2 */}
+              <div className="top-[45%]  w-[140px] h-[241px]  col-span-3  relative  ">
+                <Image
+                  src={bike2}
+                  alt="Lead motorcycle rider"
+                  fill
+                  className="object-contain  "
+                />
+              </div>
+            </div>
+
+            {/* Bottom Section - Small Portrait + Horizontal Image */}
+            <div className="grid grid-cols-12     ">
+              {/* Small Portrait - bike3 */}
+              <div className="col-span-3 self-end-safe relative h-[162px]  w-[135px] overflow-hidden ">
+                <Image
+                  src={bike3}
+                  alt="Urban motorcyclists"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              
+              {/* Horizontal Image - horibike4 */}
+              <div className=" col-span-9 relative h-[236px] w-[518px] self-end-safe  overflow-hidden">
+                <Image
+                  src={horibike1}
+                  alt="Motorcycle group ride"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Right Image */}
-          <div className="flex justify-end">
-            <img
-              src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=400&h=500&fit=crop"
-              alt="Motorcyclists riding"
-              className="w-full max-w-sm h-[500px] object-cover rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
+          {/* ========== RIGHT SIDE ========== */}
+          <div className="flex flex-col gap-y-9">
+            
+            {/* Top Row - Small Portrait + Horizontal */}
+            <div className="grid grid-cols-12 gap-2">
+              {/* Small Portrait - bike1 */}
+              <div className="col-span-3 relative h-[210px] self-end-safe w-[135px] ">
+                <Image
+                  src={bike1}
+                  alt="Motorcycle rider"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
-        {/* Mosaic Grid */}
-        <div className="grid grid-cols-12 gap-4 auto-rows-[200px]">
-          {/* Bottom Left Small Image */}
-          <div className="col-span-3 row-span-2">
-            <img
-              src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=400&h=400&fit=crop"
-              alt="Urban motorcyclists"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
+              {/* Horizontal Image - horibike3 */}
+              <div className="col-span-9 relative h-[240px] w-[465px] ">
+                <Image
+                  src={horibike4}
+                  alt="Night riders"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
 
-          {/* Bottom Center Large Image */}
-          <div className="col-span-6 row-span-2">
-            <img
-              src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&h=400&fit=crop"
-              alt="Motorcycle group ride"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
+            {/* Middle Row - Large Horizontal Image */}
+            <div className="relative w-[640px] h-[312px] ">
+              <Image
+                src={horibike2}
+                alt="Sunset motorcycle ride"
+                fill
+                className="object-cover"
+              />
+            </div>
 
-          {/* Top Right Small Images */}
-          <div className="col-span-3 row-span-1">
-            <img
-              src="https://images.unsplash.com/photo-1609371433480-2530a27c0d5e?w=400&h=200&fit=crop"
-              alt="Night riders"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
+            {/* Bottom Row - Small Portrait + Horizontal */}
+            <div className="grid grid-cols-12 ">
+              {/* Small Portrait - horibike1 */}
+              <div className="col-span-3 self-end-safe relative w-[135px] h-[72px] ">
+                <Image
+                  src={bike4}
+                  alt="Motorcycle detail"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
-          <div className="col-span-3 row-span-1">
-            <img
-              src="https://images.unsplash.com/photo-1623033684847-5c4b6c3b0c1c?w=400&h=200&fit=crop"
-              alt="City motorcycle riders"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
-
-          {/* Large Sunset Image */}
-          <div className="col-span-9 row-span-3">
-            <img
-              src="https://images.unsplash.com/photo-1591214658676-45b4c6b99636?w=1200&h=600&fit=crop"
-              alt="Sunset motorcycle ride"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
-
-          {/* Bottom Right Small Images */}
-          <div className="col-span-3 row-span-1">
-            <img
-              src="https://images.unsplash.com/photo-1558980664-769d59546b3d?w=400&h=200&fit=crop"
-              alt="Parked motorcycles"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
-
-          <div className="col-span-3 row-span-2">
-            <img
-              src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=400&h=400&fit=crop"
-              alt="Motorcycle detail"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
+              {/* Horizontal Image - bike4 */}
+              <div className="col-span-9 self-end-safe relative h-[72px] w-[469px] ">
+                <Image
+                  src={horibike3}
+                  alt="Parked motorcycles"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
