@@ -72,13 +72,14 @@ export default function MotorcycleMosaic() {
                 initial={{ rotateY: 90, opacity: 0 }}
                 whileInView={{ rotateY: 0, opacity: 1 }}
                 transition={{ duration: 1.1, ease: "easeOut" }}
-                className="flex justify-center lg:block lg:top-[45%] w-full lg:w-[140px] h-[241px] relative order-first lg:order-0"
+                whileHover={{ scale: 1.05 }}
+                className="flex justify-center lg:block lg:top-[45%] w-full lg:w-[140px] h-[241px] relative order-first lg:order-0 overflow-hidden"
               >
                 <Image
                   src={bike2}
                   alt="Lead motorcycle rider"
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                   priority
                 />
               </motion.div>
@@ -91,13 +92,14 @@ export default function MotorcycleMosaic() {
                 initial={{ opacity: 0, y: 80, filter: "blur(24px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.4, delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
                 className="md:flex hidden justify-center sm:justify-start lg:block lg:col-span-3 lg:self-end-safe relative h-[120px] sm:h-[140px] lg:h-[162px] w-full sm:w-[120px] lg:w-[135px] overflow-hidden"
               >
                 <Image
                   src={bike3}
                   alt="Urban motorcyclists"
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </motion.div>
 
@@ -105,13 +107,14 @@ export default function MotorcycleMosaic() {
               <motion.div
                 initial={{ opacity: 0, x: -180 ,filter: 'blur(24px)'}}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
-                transition={{ duration: 0.4,delay: 0.5 }} 
+                transition={{ duration: 0.4,delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
               className="lg:col-span-9 relative h-[180px] sm:h-[200px] lg:h-[236px] w-full lg:w-[518px] lg:self-end-safe overflow-hidden md:rounded-none rounded-md">
                 <Image
                   src={horibike1}
                   alt="Motorcycle group ride"
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </motion.div>
             </div>
@@ -126,12 +129,13 @@ export default function MotorcycleMosaic() {
                 initial={{ opacity: 0, y: -80, filter: "blur(24px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-              className="md:flex hidden justify-center sm:justify-start lg:block lg:col-span-3 relative h-[120px] sm:h-40 lg:h-[210px] w-full sm:w-[120px] lg:w-[135px] lg:self-end-safe">
+                whileHover={{ scale: 1.05 }}
+              className="md:flex hidden justify-center sm:justify-start lg:block lg:col-span-3 relative h-[120px] sm:h-40 lg:h-[210px] w-full sm:w-[120px] lg:w-[135px] lg:self-end-safe overflow-hidden">
                 <Image
                   src={bike1}
                   alt="Motorcycle rider"
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </motion.div>
               
@@ -140,13 +144,14 @@ export default function MotorcycleMosaic() {
               <motion.div
                 initial={{ opacity: 0, x: 180 ,filter: 'blur(24px)'}}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
-                transition={{ duration: 0.4,delay: 0.5 }} 
+                transition={{ duration: 0.4,delay: 0.5 }}
+                whileHover={{ scale: 1.05 }}
               className="lg:col-span-9 relative h-[180px] sm:h-[200px] lg:h-60 w-full lg:w-[465px] overflow-hidden md:rounded-none rounded-md">
                 <Image
                   src={horibike4}
                   alt="Night riders"
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </motion.div>
             </div>
@@ -155,14 +160,14 @@ export default function MotorcycleMosaic() {
             <motion.div
               initial={{ opacity: 0, scale:0 ,filter: 'blur(24px)'}}
               whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)'}}
-
               transition={{ duration: 0.8,delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
              className="relative w-full h-[200px] sm:h-[250px] lg:h-[312px] lg:w-[640px] overflow-hidden md:rounded-none rounded-md">
               <Image
                 src={horibike2}
                 alt="Sunset motorcycle ride"
                 fill
-                className="object-cover"
+                className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
               />
             </motion.div>
 
@@ -171,24 +176,25 @@ export default function MotorcycleMosaic() {
               initial={{ opacity: 0, y: 80 ,filter: 'blur(24px)'}}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)'}}
               transition={{ duration: 0.4,delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
             className="md:flex hidden flex-col sm:flex-row lg:grid lg:grid-cols-12 gap-4 lg:gap-0">
               {/* Small Portrait - horibike1 */}
-              <div className="flex justify-center sm:justify-start lg:block lg:col-span-3 lg:self-end-safe relative w-full sm:w-[100px] lg:w-[135px] h-[80px] sm:h-[60px] lg:h-[72px]">
+              <div className="flex justify-center sm:justify-start lg:block lg:col-span-3 lg:self-end-safe relative w-full sm:w-[100px] lg:w-[135px] h-[80px] sm:h-[60px] lg:h-[72px] overflow-hidden">
                 <Image
                   src={bike4}
                   alt="Motorcycle detail"
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </div>
 
               {/* Horizontal Image - bike4 */}
-              <div className="lg:col-span-9 lg:self-end-safe relative h-[80px] sm:h-[60px] lg:h-[72px] w-full lg:w-[469px] overflow-hidden ">
+              <div className="lg:col-span-9 lg:self-end-safe relative h-[80px] sm:h-[60px] lg:h-[72px] w-full lg:w-[469px] overflow-hidden">
                 <Image
                   src={horibike3}
                   alt="Parked motorcycles"
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </div>
             </motion.div>

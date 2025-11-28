@@ -19,7 +19,7 @@ const TrailorTradeLogo = ({ scrolled }: LogoProps) => {
     >
       
       <p
-        className={`bg-gradient-to-r font-ruso from-[#00b894] to-[#0984e3] bg-clip-text text-transparent `}
+        className={`bg-gradient-to-r font-ruso font-bold  from-[#00b894] to-[#0984e3] bg-clip-text text-transparent `}
       >
         TailorRide
       </p>
