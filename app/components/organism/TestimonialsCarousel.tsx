@@ -49,8 +49,7 @@ const TestimonialsCarousel = () => {
               Discover why thousands of riders choose our motorcycles for their daily commutes and weekend adventures. Experience the difference that precision engineering and rider-focused design makes on every journey.
             </p>
           </div>
-            <div className="flex  justify-between w-full ">
-
+            <div className="flex gap-x-16 ">
           <Button 
             buttonText='Read More Stories' 
             buttonStyle='bg-white text-[#155ADA] md:text-para1desktop text-para1mobile rounded-[5px] md:mb-20 mb-8 font-inter font-semibold px-6 py-3 hover:scale-105 shadow-md hover:shadow-3xl transition-all  md:w-auto text-center'
