@@ -4,8 +4,12 @@ import Bikes from "./components/templates/Bikes";
 import Points from "./components/templates/Points";
 import Sponsers from "./components/templates/Sponsers";
 import Contact from "./components/templates/Contact";
-import MotorcycleMosaic from "./components/templates/MotorcycleMosaic"; 
+import MotorcycleMosaic from "./components/organism/MotorcycleMosaic";
+import TechnologyShowcase from "./components/templates/TechnologyShowcase"; 
 import Footer from "./components/moleclues/Footer";
+import FAQAccordion from "./components/organism/FAQAccordion";
+import StoriesCarousel from "./components/organism/StoriesCarousel";
+import TabbedContentSection from "./components/organism/TabbedContentSection";
 
 
 export default function Home() {
@@ -20,7 +24,11 @@ export default function Home() {
         </div>
         <Sponsers />
         <Contact />
-        <MotorcycleMosaic/>
+        <TechnologyShowcase />
+        {/* <TabbedContentSection />
+        <StoriesCarousel />
+        <FAQAccordion /> */}
+
       </main>
     </>
   );

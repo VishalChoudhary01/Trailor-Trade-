@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { IoIosArrowDown, IoMdMenu } from "react-icons/io";
 import Button from '../../atoms/Button';
 import TrailorTradeLogo from '@/app/components/atoms/TrailorTradeLogo';
@@ -7,18 +7,24 @@ import MobileSideMenu from './MobileSideMenu';
 import { AnimatePresence, motion } from 'motion/react';
 import menuItems from '@/app/utils/data/menu';
 
-
-
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
+  // Use useLayoutEffect to check scroll position before paint
+  useLayoutEffect(() => {
+    const checkScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+
+    // Check scroll position immediately (synchronously)
+    checkScroll();
+
+    const handleScroll = () => {
+      checkScroll();
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

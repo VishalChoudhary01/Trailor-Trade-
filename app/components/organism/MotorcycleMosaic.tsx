@@ -16,7 +16,7 @@ import Button from "../atoms/Button";
 
 export default function MotorcycleMosaic() {
   return (
-    <section className="w-full bg-blue-50 py-12 lg:py-16">
+    <section className="w-full bg-blue-50 pt-12 lg:pt-16 ">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-14">
         {/* Main Grid - 2 Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -72,7 +72,6 @@ export default function MotorcycleMosaic() {
                 initial={{ rotateY: 90, opacity: 0 }}
                 whileInView={{ rotateY: 0, opacity: 1 }}
                 transition={{ duration: 1.1, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
                 className="flex justify-center lg:block lg:top-[45%] w-full lg:w-[140px] h-[241px] relative order-first lg:order-0 overflow-hidden"
               >
                 <Image
@@ -92,7 +91,6 @@ export default function MotorcycleMosaic() {
                 initial={{ opacity: 0, y: 80, filter: "blur(24px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
                 className="md:flex hidden justify-center sm:justify-start lg:block lg:col-span-3 lg:self-end-safe relative h-[120px] sm:h-[140px] lg:h-[162px] w-full sm:w-[120px] lg:w-[135px] overflow-hidden"
               >
                 <Image
@@ -108,7 +106,6 @@ export default function MotorcycleMosaic() {
                 initial={{ opacity: 0, x: -180 ,filter: 'blur(24px)'}}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
                 transition={{ duration: 0.4,delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
               className="lg:col-span-9 relative h-[180px] sm:h-[200px] lg:h-[236px] w-full lg:w-[518px] lg:self-end-safe overflow-hidden md:rounded-none rounded-md">
                 <Image
                   src={horibike1}
@@ -129,7 +126,6 @@ export default function MotorcycleMosaic() {
                 initial={{ opacity: 0, y: -80, filter: "blur(24px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.4, delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
               className="md:flex hidden justify-center sm:justify-start lg:block lg:col-span-3 relative h-[120px] sm:h-40 lg:h-[210px] w-full sm:w-[120px] lg:w-[135px] lg:self-end-safe overflow-hidden">
                 <Image
                   src={bike1}
@@ -145,7 +141,6 @@ export default function MotorcycleMosaic() {
                 initial={{ opacity: 0, x: 180 ,filter: 'blur(24px)'}}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
                 transition={{ duration: 0.4,delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
               className="lg:col-span-9 relative h-[180px] sm:h-[200px] lg:h-60 w-full lg:w-[465px] overflow-hidden md:rounded-none rounded-md">
                 <Image
                   src={horibike4}
@@ -161,7 +156,6 @@ export default function MotorcycleMosaic() {
               initial={{ opacity: 0, scale:0 ,filter: 'blur(24px)'}}
               whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)'}}
               transition={{ duration: 0.8,delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
              className="relative w-full h-[200px] sm:h-[250px] lg:h-[312px] lg:w-[640px] overflow-hidden md:rounded-none rounded-md">
               <Image
                 src={horibike2}
@@ -176,7 +170,6 @@ export default function MotorcycleMosaic() {
               initial={{ opacity: 0, y: 80 ,filter: 'blur(24px)'}}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)'}}
               transition={{ duration: 0.4,delay: 0.5 }}
-              whileHover={{ scale: 1.05 }}
             className="md:flex hidden flex-col sm:flex-row lg:grid lg:grid-cols-12 gap-4 lg:gap-0">
               {/* Small Portrait - horibike1 */}
               <div className="flex justify-center sm:justify-start lg:block lg:col-span-3 lg:self-end-safe relative w-full sm:w-[100px] lg:w-[135px] h-[80px] sm:h-[60px] lg:h-[72px] overflow-hidden">
