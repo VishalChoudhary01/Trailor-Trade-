@@ -25,9 +25,9 @@ export default function Home() {
         <Sponsers />
         <Contact />
         <TechnologyShowcase />
-        {/* <TabbedContentSection />
-        <StoriesCarousel />
-        <FAQAccordion /> */}
+         <TabbedContentSection />
+         {/* <StoriesCarousel />
+         <FAQAccordion />  */}
 
       </main>
     </>

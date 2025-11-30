@@ -10,7 +10,7 @@ import { motion } from "motion/react";
 
 const RiderCommunity = () => {
   return (
-    <section className="flex md:justify-start justify-center md:py-16 py-8 w-full overflow-hidden">
+    <section className="flex md:justify-start justify-center md:py-10 w-full ">
       <div className="md:w-[92%] w-full relative md:pb-20 pb-12 bg-[#F8F8F8]">
         <div className="flex md:flex-row flex-col justify-between items-center md:pr-24 md:gap-0 gap-8">
           {/* Left - Image */}
@@ -18,7 +18,7 @@ const RiderCommunity = () => {
             initial={{ scale: 0, opacity: 0, filter: "blur(180px)" }}
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:w-[550px] md:h-[550px] w-full h-64 md:relative md:bottom-44 bottom-0 md:left-0 justify-start"
+            className="md:w-[550px] md:h-[550px] w-full h-64  relative md:bottom-20 bottom-16  md:left-0 justify-start"
           >
             <Image
               src={RiderImage}
@@ -29,7 +29,7 @@ const RiderCommunity = () => {
           </motion.div>
 
           {/* Right content */}
-          <div className="md:w-[620px] w-full md:px-0 px-6 space-y-6 md:space-y-8 justify-end-safe">
+          <div className="md:w-[620px] w-full  md:px-0 px-6 space-y-6 md:space-y-8 justify-end-safe">
             <div>
             <h2 className="text-[#0546D2] font-semibold font-inter md:text-head2desktop text-head2mobile md:text-left text-center">Performance</h2>
             <h1 className="font-roboto_condensed md:text-head1desktop text-head1mobile leading-8 md:leading-12 font-bold text-[#222222] text-center md:text-left">

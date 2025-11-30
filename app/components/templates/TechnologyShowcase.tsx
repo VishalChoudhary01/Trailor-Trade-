@@ -7,7 +7,7 @@ import TestimonialsCarousel from '../organism/TestimonialsCarousel'
 
 const TechnologyShowcase = () => {
   return (
-    <div className='w-full   relative overflow-hidden py-60 space-y-40'>
+    <div className='w-full   relative overflow-hidden  space-y-40'>
       <MotorcycleMosaic />
       <Image src={bgImage} alt="Background Graphic" fill className="absolute object-cover  -z-50   inset-0 " />
       <RiderCommunity />
