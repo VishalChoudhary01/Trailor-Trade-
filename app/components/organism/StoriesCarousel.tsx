@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "motion/react";
 
 const StoriesCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const stories = [
     {
@@ -35,9 +35,9 @@ const StoriesCarousel = () => {
     }
   ];
 
-  const handleDotClick = (index) => {
-    setCurrentIndex(index);
-  };
+  const handleDotClick = (index: number) => {
+  setCurrentIndex(index);
+};
 
   return (
     <section className="w-full bg-white md:py-20 py-12 px-4">
