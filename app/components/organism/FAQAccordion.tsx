@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const FAQAccordion = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -28,9 +28,10 @@ const FAQAccordion = () => {
     }
   ];
 
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
 
   return (
     <section className="w-full bg-[#F5F5F5] md:py-20 py-12 px-4">
