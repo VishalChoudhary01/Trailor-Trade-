@@ -1,4 +1,4 @@
-// import Navbar from "./components/moleclues/navigation/Navbar";
+import Navbar from "./components/moleclues/navigation/Navbar";
 import Hero from "./components/templates/Hero";
 import Bikes from "./components/templates/Bikes";
 import Points from "./components/templates/Points";
@@ -17,7 +17,7 @@ import DealershipSection from "./components/organism/DealershipSection";
 export default function Home() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="w-full overflow-hidden"> 
         <Hero />
         <div className="bg-hero-custom">
