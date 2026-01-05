@@ -1,4 +1,4 @@
-import Navbar from "./components/moleclues/navigation/Navbar";
+// import Navbar from "./components/moleclues/navigation/Navbar";
 import Hero from "./components/templates/Hero";
 import Bikes from "./components/templates/Bikes";
 import Points from "./components/templates/Points";
@@ -11,6 +11,7 @@ import FAQAccordion from "./components/organism/FAQAccordion";
 import StoriesCarousel from "./components/organism/StoriesCarousel";
 import TabbedContentSection from "./components/organism/TabbedContentSection";
 import DealershipSection from "./components/organism/DealershipSection";
+
 
 
 export default function Home() {
