@@ -10,12 +10,13 @@ import Footer from "./components/moleclues/Footer";
 import FAQAccordion from "./components/organism/FAQAccordion";
 import StoriesCarousel from "./components/organism/StoriesCarousel";
 import TabbedContentSection from "./components/organism/TabbedContentSection";
+import DealershipSection from "./components/organism/DealershipSection";
 
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="w-full overflow-hidden"> 
         <Hero />
         <div className="bg-hero-custom">
@@ -26,9 +27,9 @@ export default function Home() {
         <Contact />
         <TechnologyShowcase />
          <TabbedContentSection />
+         <DealershipSection />
          {/* <StoriesCarousel />
          <FAQAccordion />  */}
-
       </main>
     </>
   );
