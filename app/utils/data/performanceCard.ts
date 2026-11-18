@@ -1,10 +1,17 @@
+import type { StaticImageData } from "next/image";
 import sportMotorcycle from '../../../public/images/cards/sportmotorcycle.jpg';
 import adventureBike from '../../../public/images/cards/moutainbike.jpg';
 import comfortableRider from '../../../public/images/cards/comfortbike.jpg';
 import touringBike from '../../../public/images/cards/tourbike.jpg';
 
+export interface PerformanceCard {
+  image: StaticImageData;
+  title: string;
+  description: string;
+  link: string;
+}
 
-const performanceCards = [
+const performanceCards: PerformanceCard[] = [
     {
       image: sportMotorcycle,
       title: "PERFORMANCE ENGINEERED",

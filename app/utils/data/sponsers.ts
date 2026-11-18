@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import Ather from "../../../public/images/brands/AtherLogo.png";
 import Bajaj from "../../../public/images/brands/Bajaj.png";
 import TORK from "../../../public/images/brands/TORK.png";
@@ -12,8 +13,12 @@ import royal from "../../../public/images/brands/royal.png";
 import revolt from "../../../public/images/brands/royal.png";
 
 
+export interface SponsorBrand {
+  name: string;
+  image: StaticImageData;
+}
 
-const brands = [
+const brands: SponsorBrand[] = [
     { name: "Hero", image: Hero },
     { name: "Honda", image: Honda },
     { name: "Bajaj", image: Bajaj },

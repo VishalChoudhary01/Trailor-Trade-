@@ -6,7 +6,7 @@ import HeaderContent from "../organism/HeaderContent";
 import Button from "../atoms/Button";
 import { FaArrowRight } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { featuresList } from "@/app/utils/data/index";
 
 const Bikes = () => {
@@ -15,7 +15,7 @@ const Bikes = () => {
       <div className=" shadow-2xl w-[92%] relative pb-20 bg-white">
         <div className="flex md:flex-row justify-center flex-col-reverse md:p-8 px-3 py-5 ">
           {/* left */}
-          <motion.div
+          <m.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -29,7 +29,7 @@ const Bikes = () => {
             {/* Feature Items */}
             <div className="md:pt-14 pt-10  max-w-[594px] space-y-6">
               {featuresList.map((item, index) => (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 50, filter: "blur(50px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -40,15 +40,16 @@ const Bikes = () => {
                     src={item.img}
                     alt="imga"
                     className="md:w-[146px] md:h-[146px] w-[100px] h-[100px] "
+                    sizes="(min-width: 768px) 146px, 100px"
                   />
                   <p className="md:w-[380px] md:text-para1desktop text-para1mobile text-justify leading-tight tracking-tight">
                     {item.text}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
             {/* CTA */}
-            <motion.div
+            <m.div
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }} 
@@ -63,10 +64,10 @@ const Bikes = () => {
                 buttonStyle={`font-inter text-[#1959AC] outline outline-[#1959AC] rounded-sm  md:text-para2desktop text-para1mobile  flex items-center gap-x-2 md:px-7 px-6 py-1`}
                 leftIcon={<BsTelephone />}
               />
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
           {/* Right */}
-          <motion.div
+          <m.div
             initial={{ scale: 0, opacity: 0, filter: "blur(180px)" }}
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -76,11 +77,9 @@ const Bikes = () => {
               src={BikeImage}
               alt="bikes"
               className="w-full h-auto object-contain"
-              layout="responsive"
-              width={800}
-              height={600}
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </motion.div>
+          </m.div>
         </div>
         <div className="bg-linear-90 from-[#043898] via-[#079902] to-[#170041] md:w-[96%] w-full md:h-5 h-3 absolute bottom-0"></div>
       </div>

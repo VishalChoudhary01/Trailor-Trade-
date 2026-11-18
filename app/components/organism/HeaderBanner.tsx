@@ -1,32 +1,39 @@
 import React from 'react';
+import Image from 'next/image';
 import TrailorTradeLogo from '../atoms/TrailorTradeLogo';
 import Button from '../atoms/Button';
 import { FaArrowRightLong } from "react-icons/fa6";
 
 
-type HeaderBannerProps = {
+type HeaderBannerBaseProps = {
   heading: string;
   paragraph1?: string;
   paragraph2?: string;
-  showButton?: boolean;
-  buttonText?: string;
   backgroundImageSet: string; 
 };
 
-function HeaderBanner({
-  heading,
-  paragraph1,
-  paragraph2,
-  showButton = false,
-  buttonText = '',
-  backgroundImageSet,
-}: HeaderBannerProps) {
+/** A CTA button always needs its label, so the two props travel together. */
+export type HeaderBannerProps = HeaderBannerBaseProps &
+  (
+    | { showButton: true; buttonText: string }
+    | { showButton?: false; buttonText?: string }
+  );
+
+function HeaderBanner(props: HeaderBannerProps) {
+  const { heading, paragraph1, paragraph2, backgroundImageSet } = props;
   return (
-    <div
-      className="w-full h-[652px] bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImageSet})` }}
-    >
-      <div className="w-full h-full px-8 py-6">
+    <div className="relative w-full h-[652px] overflow-hidden">
+      {/* Served through next/image so the large banner art is delivered as
+          compressed, correctly sized AVIF/WebP instead of the raw asset. */}
+      <Image
+        src={backgroundImageSet}
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <div className="relative z-10 w-full h-full px-8 py-6">
         <TrailorTradeLogo />
         <div className="w-full h-full text-center flex items-center justify-center">
           <div className="text-white flex flex-col items-center md:gap-y-5 gap-y-3 md:py-1 pt-3 ">
@@ -50,9 +57,9 @@ function HeaderBanner({
               </p>
             )}
 
-            {showButton && (
+            {props.showButton && (
               <Button
-                buttonText={buttonText}
+                buttonText={props.buttonText}
                 buttonStyle={`bg-white px-3 py-1 flex text-[#1959AC] items-center gap-x-1 font-bold rounded font-inter`}
                 rightIcon={<FaArrowRightLong className='text-[#1959AC]' />}
               />

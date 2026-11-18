@@ -1,4 +1,11 @@
-const menuItems = [
+export type MenuLabel = "Models" | "Technology" | "Support" | "Company";
+
+export interface NavigationItem {
+  label: MenuLabel;
+  options: readonly string[];
+}
+
+const menuItems: readonly NavigationItem[] = [
   { 
     label: 'Models', 
     options: ['Urban Commander', 'Adventure Seeker', 'Touring Edition', 'Eco Innovator'] 

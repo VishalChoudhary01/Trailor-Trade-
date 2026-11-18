@@ -1,12 +1,23 @@
 import React from "react";
 import { FaChevronDown } from "react-icons/fa";
 
-interface SelectOption {
+export interface SelectOption {
   label: string;
   value: string;
 }
 
-interface SelectProps {
+/** Native select attributes (name, id, required, aria-*, disabled, ...). */
+type NativeSelectProps = Omit<
+  React.ComponentPropsWithoutRef<"select">,
+  | "children"
+  | "value"
+  | "defaultValue"
+  | "onChange"
+  | "className"
+  | "multiple"
+>;
+
+export type SelectProps = NativeSelectProps & {
   label?: string;
   value?: string;
   options: SelectOption[];
@@ -17,7 +28,7 @@ interface SelectProps {
   labelClassName?: string;
   containerClassName?: string;
   onChange?: (value: string) => void;
-}
+};
 
 const Select = ({
   label,
@@ -30,6 +41,7 @@ const Select = ({
   labelClassName = "",
   containerClassName = "",
   onChange,
+  ...selectProps
 }: SelectProps) => {
   return (
     <div className={containerClassName}>
@@ -41,7 +53,9 @@ const Select = ({
 
       <div className="relative">
         <select
+          {...selectProps}
           value={value}
+          required={required}
           onChange={(e) => onChange?.(e.target.value)}
           className={`appearance-none cursor-pointer transition-all duration-200 ease-in-out  w-full ${className} ${
             error ? "border-red-500" : "border-gray-300"

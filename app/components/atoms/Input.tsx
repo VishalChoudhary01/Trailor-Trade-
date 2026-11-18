@@ -2,7 +2,13 @@ import React from "react";
 
 type InputType =| "text"| "email"| "password"| "number"| "tel"| "url"| "date"| "search";
 
-interface InputProps {
+/** Native input attributes (name, id, required, aria-*, autoComplete, ...). */
+type NativeInputProps = Omit<
+  React.ComponentPropsWithoutRef<"input">,
+  "children" | "type" | "value" | "onChange" | "className" | "placeholder"
+>;
+
+export type InputProps = NativeInputProps & {
   label?: string;
   type?: InputType;
   placeholder?: string;
@@ -13,7 +19,7 @@ interface InputProps {
   labelClassName?: string; 
   containerClassName?: string; 
   onChange?: (value: string) => void;
-}
+};
 
 const Input = ({
   label,
@@ -26,6 +32,7 @@ const Input = ({
   labelClassName,
   containerClassName,
   onChange,
+  ...inputProps
 }: InputProps) => {
   return (
     <div className={containerClassName}>
@@ -36,9 +43,11 @@ const Input = ({
       )}
 
       <input
+        {...inputProps}
         type={type}
         placeholder={placeholder}
         value={value}
+        required={required}
         onChange={(e) => onChange?.(e.target.value)}
         className={className}
       />

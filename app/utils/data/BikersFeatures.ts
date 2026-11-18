@@ -1,7 +1,13 @@
+import type { StaticImageData } from "next/image";
 import Biker1 from "../../../public/images/features/biker1.png"; 
 import Biker2 from "../../../public/images/features/handshake.png";
 import Biker3 from "../../../public/images/features/threeHand.png";
-const featuresList=[{
+export interface FeatureItem {
+  img: StaticImageData;
+  text: string;
+}
+
+const featuresList: FeatureItem[]=[{
             img: Biker1,
             text: "Every model is built for speed and control, optimized to dominate highways and urban roads alike.",
           }, {

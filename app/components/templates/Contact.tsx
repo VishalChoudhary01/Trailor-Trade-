@@ -13,7 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { modelOptions, experienceOptions, usageOptions } from '@/app/utils/data/Options'
-import { motion } from 'framer-motion';
+import { m } from 'motion/react';
 
 interface BookingFormData {
   name: string;
@@ -136,7 +136,7 @@ const Contact = () => {
                 />
               </div>
             </div>
-            <motion.div 
+            <m.div 
             initial={{ opacity: 0, y: 20,filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -151,7 +151,7 @@ const Contact = () => {
                 buttonText='Submit Request' 
                 buttonStyle='bg-[#1959AC] flex items-center gap-x-2 text-white rounded-[5px] font-inter font-semibold px-6 py-3 md:px-4 md:py-2 md:text-para2desktop text-para3mobile md:w-auto justify-center'
               />
-            </motion.div>
+            </m.div>
           </form>
           
         </div>
@@ -165,7 +165,7 @@ const Contact = () => {
           <p className='text-neutral-800 md:text-para1desktop text-para1mobile text-center md:text-left'>
             Transform your riding experience with our powerful companion app. Join thousands of riders who already enhanced their journey.
           </p>
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 20,filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.5,delay: 0.2 }}
@@ -196,21 +196,21 @@ const Contact = () => {
                 alt="apple"
               />
             </Link>
-          </motion.div>
+          </m.div>
         </div>
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 40,filter: 'blur(4px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.5,delay: 0.3 }}
         className='self-end relative w-full md:w-[58%] h-64 md:h-full mb-6 md:mb-0 order-1 md:order-2'>
           <Image  
             className="object-contain" 
-            layout='fill' 
-            objectFit="contain" 
+            fill
+            sizes="(min-width: 768px) 58vw, 100vw"
             alt='banner' 
-            src={smartphonehand.src} 
+            src={smartphonehand} 
           />
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import research from '../../../public/images/research.png';
 import plan from '../../../public/images/plan.jpg';
 import design from '../../../public/images/desginnn.jpg';
 import Image from "next/image";
-import { motion, AnimatePresence } from 'motion/react'
+import { m, AnimatePresence } from 'motion/react'
 
 type TabId = "research" | "plan" | "design";  
 
@@ -34,7 +34,7 @@ const TabbedContentSection = () => {
   };
 
   return (
-    <section className="w-full bg-gray-50 py-24 md:py-64   px-4 sm:px-6">
+    <section className="w-full bg-gray-50 py-24 md:py-64 px-2.5 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           
@@ -64,7 +64,7 @@ const TabbedContentSection = () => {
             {/* Content with responsive height */}
             <div className="mb-6 md:mb-8 min-h-[140px] sm:min-h-[120px] md:min-h-[100px]">
               <AnimatePresence mode="wait">
-                <motion.div
+                <m.div
                   key={activeTab + "-text"}
                   initial={{ opacity: 0, x: -30, filter: "blur(4px)" }}
                   animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
@@ -77,7 +77,7 @@ const TabbedContentSection = () => {
                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                     {content[activeTab].text}
                   </p>
-                </motion.div>
+                </m.div>
               </AnimatePresence>
             </div>
 
@@ -89,9 +89,9 @@ const TabbedContentSection = () => {
 
           {/* Image with responsive sizing */}
           <div className="order-1 lg:order-2">
-            <div className="relative w-full perspective-distant max-w-full lg:max-w-[600px] mx-auto h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
+            <div className="relative w-full perspective-distant max-w-full lg:max-w-[600px]  h-[200px] xs:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
               <AnimatePresence mode="wait">
-                <motion.div
+                <m.div
                   key={activeTab + "-image"}
                   initial={{ 
                     opacity: 0,
@@ -129,11 +129,10 @@ const TabbedContentSection = () => {
                     fill 
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    priority
                   />
                   
                   
-                </motion.div>
+                </m.div>
               </AnimatePresence>
             </div>
           </div>

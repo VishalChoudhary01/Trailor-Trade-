@@ -1,23 +1,19 @@
 "use client"
 import React from 'react';
+import type { NavigationItem } from "@/app/utils/data/menu";
 import { IoIosArrowDown, IoMdClose } from "react-icons/io";
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import Button from '../../atoms/Button';
-import { MdPhone, MdLocationOn } from "react-icons/md";
+import { MdPhone } from "react-icons/md";
 import { IoMailUnreadOutline } from "react-icons/io5";
 import { FaDownload, FaMapMarkerAlt } from "react-icons/fa";
 
-interface MenuItem {
-  label: string;
-  options: string[];
-}
-
-interface MobileSideMenuProps {
+export interface MobileSideMenuProps {
   isOpen: boolean;
   onClose: () => void;
   openDropdown: number | null;
   onToggleDropdown: (index: number) => void;
-  menuItems: MenuItem[];
+  menuItems: readonly NavigationItem[];
 }
 
 const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
@@ -32,7 +28,7 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
       {isOpen && (
         <>
           {/* Backdrop with subtle blur */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -41,7 +37,7 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
           />
           
           {/* Sidebar */}
-          <motion.div
+          <m.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -75,7 +71,7 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
             </div>
 
             {/* Menu Items */}
-            <div className="flex-1 overflow-y-auto py-6 px-4 bg-gray-50/50">
+            <div data-lenis-prevent className="flex-1 overflow-y-auto py-6 px-4 bg-gray-50/50">
               <ul className='space-y-2'>
                 {menuItems.map((item, index) => (
                   <div key={index} className={`font-inter bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden border border-gray-100`}>
@@ -95,7 +91,7 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
 
                     <AnimatePresence>
                       {openDropdown === index && (
-                        <motion.div
+                        <m.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
@@ -104,7 +100,7 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
                         >
                           <div className="py-2 space-y-1 pl-4 border-t border-gray-100">
                             {item.options.map((option, i) => (
-                              <motion.div 
+                              <m.div 
                                 key={i}
                                 initial={{ x: -10, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
@@ -113,10 +109,10 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
                                 onClick={onClose}
                               >
                                 {option}
-                              </motion.div>
+                              </m.div>
                             ))}
                           </div>
-                        </motion.div>
+                        </m.div>
                       )}
                     </AnimatePresence>
                   </div>
@@ -185,7 +181,7 @@ const MobileSideMenu: React.FC<MobileSideMenuProps> = ({
                 Premium Electric Mobility
               </p>
             </div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

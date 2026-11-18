@@ -1,6 +1,17 @@
 import React from "react";
 
-interface TextAreaProps {
+/** Native textarea attributes (name, id, required, aria-*, maxLength, ...). */
+type NativeTextAreaProps = Omit<
+  React.ComponentPropsWithoutRef<"textarea">,
+  | "children"
+  | "value"
+  | "onChange"
+  | "className"
+  | "placeholder"
+  | "rows"
+>;
+
+export type TextAreaProps = NativeTextAreaProps & {
   label?: string;
   placeholder?: string;
   value?: string;
@@ -11,7 +22,7 @@ interface TextAreaProps {
   labelClassName?: string; // for <label>
   containerClassName?: string; // for outer <div>
   onChange?: (value: string) => void;
-}
+};
 
 const TextArea = ({
   label,
@@ -24,6 +35,7 @@ const TextArea = ({
   labelClassName,
   containerClassName,
   onChange,
+  ...textAreaProps
 }: TextAreaProps) => {
   return (
     <div className={containerClassName}>
@@ -34,9 +46,11 @@ const TextArea = ({
       )}
 
       <textarea
+        {...textAreaProps}
         placeholder={placeholder}
         value={value}
         rows={rows}
+        required={required}
         onChange={(e) => onChange?.(e.target.value)}
         className={className}
       />

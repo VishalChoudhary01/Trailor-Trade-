@@ -1,9 +1,9 @@
 'use client'
 
 import Image, { StaticImageData } from 'next/image'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
-type CardProps = {
+export type CardProps = {
   image: StaticImageData
   title: string
   description: string
@@ -12,7 +12,7 @@ type CardProps = {
 
 function Card({ image, title, description, link = "#" }: CardProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: 80 ,filter: 'blur(24px)',background:"white"}}
       whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
       transition={{ duration: 0.4,delay: 0.5 }} 
@@ -23,6 +23,7 @@ function Card({ image, title, description, link = "#" }: CardProps) {
         <Image
           src={image}
           alt={title}
+          sizes="(min-width: 768px) 384px, 100vw"
           className="w-full h-[180px] object-cover md:rounded-t-2xl rounded-t-lg transition-transform cursor-pointer duration-500 ease-in-out transform hover:scale-125"
         />
       </div>
@@ -42,7 +43,7 @@ function Card({ image, title, description, link = "#" }: CardProps) {
           Learn More
         </a>
       </div>
-    </motion.div>
+    </m.div>
   )
 }
 

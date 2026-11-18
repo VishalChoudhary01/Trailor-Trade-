@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 // Import actual images
 import bike1 from "../../../public/images/mosic_grid_banner/bike1.png";
@@ -26,23 +26,23 @@ export default function MotorcycleMosaic() {
             <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-x-12">
               {/* Text Content */}
               <div className="lg:col-span-9 space-y-4 lg:space-y-8 text-center lg:text-left">
-                <motion.p
+                <m.p
                   initial={{ opacity: 0, scale: 10,  }}
                   whileInView={{ opacity: 1, scale: 1,}}
                   transition={{ duration: 1.2, delay: 0.5 }}
                  className="text-sm lg:text-[20px] font-inter text-gray-500 tracking-widest font-semibold uppercase">
                   NO LIMITS
-                </motion.p>
+                </m.p>
 
-                <motion.h1
+                <m.h1
                   initial={{ opacity: 0, y: 80, filter: "blur(24px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.4, delay: 0.5 }} 
                 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-head1 uppercase [word-spacing:0.1em] lg:[word-spacing:0.2em] leading-tight">
                   PUSH BEYOND CONVENTIONAL BOUNDARIES
-                </motion.h1>
+                </m.h1>
 
-                <motion.p
+                <m.p
                   initial={{ opacity: 0, y: 80, filter: "blur(24px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.4, delay: 0.5 }}
@@ -51,9 +51,9 @@ export default function MotorcycleMosaic() {
                   cutting-edge technology and precision craftsmanship, we
                   deliver unmatched performance that transforms every ride into
                   an extraordinary experience.
-                </motion.p>
+                </m.p>
 
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.5, delay: 0.5 }}
@@ -64,11 +64,11 @@ export default function MotorcycleMosaic() {
                     rightIcon={<FaArrowRightLong />}
                     rightStyle="text-lg"
                   />
-                </motion.div>
+                </m.div>
               </div>
 
               {/* Small Portrait Image - bike2 */}
-              <motion.div
+              <m.div
                 initial={{ rotateY: 90, opacity: 0 }}
                 whileInView={{ rotateY: 0, opacity: 1 }}
                 transition={{ duration: 1.1, ease: "easeOut" }}
@@ -78,16 +78,16 @@ export default function MotorcycleMosaic() {
                   src={bike2}
                   alt="Lead motorcycle rider"
                   fill
+                  sizes="(min-width: 1024px) 140px, 240px"
                   className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
-                  priority
                 />
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Bottom Section - Small Portrait + Horizontal Image */}
             <div className="flex flex-col sm:flex-row lg:grid lg:grid-cols-12 gap-4 lg:gap-0">
               {/* Small Portrait - bike3 */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 80, filter: "blur(24px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.4, delay: 0.5 }}
@@ -97,12 +97,13 @@ export default function MotorcycleMosaic() {
                   src={bike3}
                   alt="Urban motorcyclists"
                   fill
+                  sizes="(min-width: 1024px) 135px, 120px"
                   className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
-              </motion.div>
+              </m.div>
 
               {/* Horizontal Image - horibike4 */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: -180 ,filter: 'blur(24px)'}}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
                 transition={{ duration: 0.4,delay: 0.5 }}
@@ -111,9 +112,10 @@ export default function MotorcycleMosaic() {
                   src={horibike1}
                   alt="Motorcycle group ride"
                   fill
+                  sizes="(min-width: 1024px) 518px, 100vw"
                   className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
-              </motion.div>
+              </m.div>
             </div>
           </div>
 
@@ -122,7 +124,7 @@ export default function MotorcycleMosaic() {
             {/* Top Row - Small Portrait + Horizontal */}
             <div className="flex flex-col sm:flex-row lg:grid lg:grid-cols-12 gap-4 lg:gap-2">
               {/* Small Portrait - bike1 */}
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: -80, filter: "blur(24px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.4, delay: 0.5 }}
@@ -131,13 +133,14 @@ export default function MotorcycleMosaic() {
                   src={bike1}
                   alt="Motorcycle rider"
                   fill
+                  sizes="(min-width: 1024px) 135px, 120px"
                   className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
-              </motion.div>
+              </m.div>
               
 
               {/* Horizontal Image - horibike3 */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: 180 ,filter: 'blur(24px)'}}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)'}}
                 transition={{ duration: 0.4,delay: 0.5 }}
@@ -146,13 +149,14 @@ export default function MotorcycleMosaic() {
                   src={horibike4}
                   alt="Night riders"
                   fill
+                  sizes="(min-width: 1024px) 465px, 100vw"
                   className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Middle Row - Large Horizontal Image */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale:0 ,filter: 'blur(24px)'}}
               whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)'}}
               transition={{ duration: 0.8,delay: 0.5 }}
@@ -161,12 +165,13 @@ export default function MotorcycleMosaic() {
                 src={horibike2}
                 alt="Sunset motorcycle ride"
                 fill
+                sizes="(min-width: 1024px) 640px, 100vw"
                 className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
               />
-            </motion.div>
+            </m.div>
 
             {/* Bottom Row - Small Portrait + Horizontal */}
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 80 ,filter: 'blur(24px)'}}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)'}}
               transition={{ duration: 0.4,delay: 0.5 }}
@@ -177,6 +182,7 @@ export default function MotorcycleMosaic() {
                   src={bike4}
                   alt="Motorcycle detail"
                   fill
+                  sizes="(min-width: 1024px) 135px, 100px"
                   className="object-contain hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </div>
@@ -187,10 +193,11 @@ export default function MotorcycleMosaic() {
                   src={horibike3}
                   alt="Parked motorcycles"
                   fill
+                  sizes="(min-width: 1024px) 469px, 100vw"
                   className="object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

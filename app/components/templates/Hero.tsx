@@ -6,7 +6,7 @@ import Input from "../atoms/Input";
 import Button from "../atoms/Button";
 import bluetick from "../../../public/icons/bluetick.svg";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
     <section className="w-full flex flex-col md:pb-24 pb-14  overflow-hidden ">
       <div className="w-full flex items-center ">
         {/* left */}
-        <motion.div
+        <m.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -42,7 +42,7 @@ const Hero = () => {
                   rightIcon={<FaArrowRight />}
                 />
               </div>
-              <motion.div
+              <m.div
                 initial={{ y: 180, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -54,19 +54,25 @@ const Hero = () => {
                   className="md:size-5 size-[18px] object-contain"
                 />
                 <p className="md:text-[15px] text-[12px] text-[#1959AC]">No credit card required!</p>
-              </motion.div>
+              </m.div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
         {/* right */}
-        <motion.div
+        <m.div
           initial={{ x: 120, opacity: 0,filter: 'blur(250px)',background: 'white' }}
           whileInView={{ x: 0, opacity: 1, filter: 'blur(0px)', background: 'rgba(255, 255, 255, 0)' }}
           transition={{ duration: 0.9 }}
           className="w-[40%] h-auto md:block hidden clip-diagonal "
         >
-          <Image src={hero} alt="hero" className="object-fill" />
-        </motion.div>
+          <Image
+            src={hero}
+            alt="hero"
+            className="object-fill"
+            priority
+            sizes="(min-width: 768px) 40vw, 100vw"
+          />
+        </m.div>
       </div>
       <div className="absolute bottom-0 w-full h-[60px] md:block hidden bg-linear-to-t from-white to-transparent  "></div>
     </section>

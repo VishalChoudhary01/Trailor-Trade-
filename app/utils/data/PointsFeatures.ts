@@ -1,4 +1,9 @@
-const featuresList=[
+export interface PointFeature {
+  heading: string;
+  descp: string;
+}
+
+const featuresList: PointFeature[]=[
           {
             heading: "Trusted by 50,000+ Riders Worldwide.",
             descp:"We’ve earned a reputation for quality, trust, and performance on every road we ride."

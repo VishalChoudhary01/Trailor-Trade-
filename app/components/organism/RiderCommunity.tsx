@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-// import RiderImage from "../../../public/images/riders/community.jpg"; 
 import RiderImage from "../../../public/images/trust-partner.png"; 
-import HeaderContent from "../organism/HeaderContent";
 import Button from "../atoms/Button";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 
 const RiderCommunity = () => {
   return (
@@ -14,7 +12,7 @@ const RiderCommunity = () => {
       <div className="md:w-[92%] w-full relative md:pb-20 pb-12 bg-[#F8F8F8]">
         <div className="flex md:flex-row flex-col justify-between items-center md:pr-24 md:gap-0 gap-8">
           {/* Left - Image */}
-          <motion.div
+          <m.div
             initial={{ scale: 0, opacity: 0, filter: "blur(180px)" }}
             whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -25,15 +23,16 @@ const RiderCommunity = () => {
               alt="rider community"
               className="absolute object-contain"
               fill
+              sizes="(min-width: 768px) 550px, 100vw"
             />
-          </motion.div>
+          </m.div>
 
           {/* Right content */}
           <div className="md:w-[620px] w-full  md:px-0 px-6 space-y-6 md:space-y-8 justify-end-safe">
             <div>
             <h2 className="text-[#0546D2] font-semibold font-inter md:text-head2desktop text-head2mobile md:text-left text-center">Performance</h2>
             <h1 className="font-roboto_condensed md:text-head1desktop text-head1mobile leading-8 md:leading-12 font-bold text-[#222222] text-center md:text-left">
-             <motion.span
+             <m.span
   className="text-[#1959AC] inline-block"
   initial={{ 
     opacity: 0,
@@ -57,7 +56,7 @@ const RiderCommunity = () => {
   }}
 >
   ENGINEERED
-</motion.span>  FOR UNMATCHED RIDING DYNAMICS
+</m.span>  FOR UNMATCHED RIDING DYNAMICS
             </h1>
             </div>
             <p className="md:text-para1desktop text-para1 text-para1mobile text-center md:text-left">
@@ -65,7 +64,7 @@ const RiderCommunity = () => {
             </p>
           
             <div className="w-full flex md:flex-row flex-col md:gap-x-42 gap-6 md:gap-0">
-              <motion.div
+              <m.div
                 initial={{ x: -150, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }} 
@@ -73,8 +72,8 @@ const RiderCommunity = () => {
                 <p className="text-[#222222] md:text-head3desktop text-head3mobile font-semibold font-inter text-center md:text-left">Advanced Powertrain</p>
                 <p className="text-[#222222] md:text-head3desktop text-head3mobile font-semibold font-inter text-center md:text-left">Smart Connectivity</p>
                 <p className="text-[#222222] md:text-head3desktop text-head3mobile font-semibold font-inter text-center md:text-left">Adaptive Suspension</p>
-              </motion.div>
-              <motion.div
+              </m.div>
+              <m.div
                 initial={{ x: 150, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }} 
@@ -82,10 +81,10 @@ const RiderCommunity = () => {
                 <p className="text-[#222222] md:text-head3desktop text-head3mobile font-semibold font-inter text-center md:text-left">Eco Efficiency</p>
                 <p className="text-[#222222] md:text-head3desktop text-head3mobile font-semibold font-inter text-center md:text-left">Safety Systems</p>
                 <p className="text-[#222222] md:text-head3desktop text-head3mobile font-semibold font-inter text-center md:text-left">Comfort Engineering</p>
-              </motion.div>
+              </m.div>
             </div>
             
-            <motion.div
+            <m.div
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }} 
@@ -96,7 +95,7 @@ const RiderCommunity = () => {
                 rightStyle="group-hover:translate-x-1 transition-all" 
                 rightIcon={<FaArrowRight />}
               />
-            </motion.div>
+            </m.div>
           </div>
         </div>
         <div className="bg-linear-90 from-[#043898] via-[#079902] to-[#170041] md:w-[96%] w-full md:h-5 h-3 absolute bottom-0"></div>

@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+import type { IconType } from "react-icons";
 import pipe from "../../../public/icons/testimonial _cards/pipe.svg";
 import cloud from "../../../public/icons/testimonial _cards/cloud.svg";
 import stars from "../../../public/icons/testimonial _cards/stars.svg";
@@ -10,8 +12,6 @@ import cameron from "../../../public/images/testimonial_users/cameron.png";
 
 // testimonials icons
 import { SlBubble } from "react-icons/sl";
-import { ImSafari } from "react-icons/im";
-import { ImPodcast } from "react-icons/im";
 import { PiYarnThin } from "react-icons/pi";
 import { PiYinYang } from "react-icons/pi";
 import { PiWheelchair } from "react-icons/pi";
@@ -32,7 +32,26 @@ import { TfiPalette } from "react-icons/tfi";
 
 
 
-export  const testimonials = [
+type TestimonialImage = StaticImageData | string;
+
+interface TestimonialBase {
+  text: string;
+  avatar: StaticImageData;
+  name: string;
+  role: string;
+}
+
+/**
+ * A testimonial renders either a static image icon or a React icon component,
+ * never both. The union makes that mutual exclusivity explicit.
+ */
+export type Testimonial = TestimonialBase &
+  (
+    | { icon: TestimonialImage; ReactIcon?: never }
+    | { ReactIcon: IconType; icon?: never }
+  );
+
+export  const testimonials: Testimonial[] = [
   {
     icon: cloud, // Could represent smooth ride
     text: "The smooth power delivery and comfortable ergonomics make my daily commute an absolute pleasure. This bike handles city traffic with ease while being comfortable enough for long weekend rides.",

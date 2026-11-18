@@ -6,7 +6,7 @@ import Image from 'next/image'
 import guys from '../../../public/images/guys.png';
 import sureIcon from '../../../public/icons/Sure-Drive.svg'
 import { pointsFeaturesList } from '@/app/utils/data/index';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 
 const Points = () => {
@@ -21,7 +21,7 @@ const Points = () => {
                 <div className='max-w-[762px] '>
                 <div className='md:space-y-5 space-y-3.5 mt-6 '>
                   {pointsFeaturesList.map((item,index)=>(
-                    <motion.div
+                    <m.div
                     viewport={{once:true}}  
                     initial={{opacity:0, y:50,filter:'blur(50px)'}}
                     whileInView={{opacity:1, y:0, filter:'blur(0px)'}}
@@ -34,19 +34,19 @@ const Points = () => {
                       <h4 className='text-[#151515] md:text-head3desktop text-[15px]'>{item.heading}</h4>
                       <p className='md:text-para2desktop text-[14px] text-[#212020]'>{item.descp}</p>
                     </div>
-                  </motion.div>
+                  </m.div>
                   ))}
                 </div>
                 </div>
                 </div>
                 {/* Right */}
-                <motion.div
+                <m.div
                 initial={{opacity:0, scale:0, filter:'blur(50px)'}}
                 whileInView={{opacity:1, scale:1, filter:'blur(0px)'}}
                 transition={{duration:0.5, delay:0.6}}
                  className='w-full md:w-[577px] md:h-[620px] items-center-safe '>
-                <Image src={guys} alt='meeting' />
-                 </motion.div> 
+                <Image src={guys} alt='meeting' sizes='(min-width: 768px) 577px, 100vw' />
+                 </m.div> 
             </div>
             <div className="bg-linear-90 from-[#043898] via-[#079902] to-[#170041]  w-full md:h-[20px] h-[12px] absolute bottom-0"></div>
         </div>

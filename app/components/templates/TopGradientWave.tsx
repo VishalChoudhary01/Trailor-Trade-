@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "motion/react";
 
 const TopGradientWave = () => {
   return (
     <div className="fixed top-0 left-0 w-full overflow-hidden pointer-events-none z-0">
-      <motion.div
+      <m.div
         animate={{
           y: [0, -20, 0],
           scale: [1, 1.05, 1],
@@ -33,7 +33,7 @@ const TopGradientWave = () => {
               <stop offset="100%" stopColor="#00f5a0" />
             </linearGradient>
           </defs>
-          <motion.path
+          <m.path
             fill="url(#gradient)"
             fillOpacity="1"
             d="M0,160L120,165.3C240,171,480,181,720,154.7C960,128,1200,64,1320,32L1440,0L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
@@ -51,7 +51,7 @@ const TopGradientWave = () => {
             }}
           />
         </svg>
-      </motion.div>
+      </m.div>
     </div>
   );
 };

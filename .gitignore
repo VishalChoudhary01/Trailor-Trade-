@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# markdown
+docs/**/*.md
+.md
+!README.md
+
+# AI Agents
+/.freebuff

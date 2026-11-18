@@ -1,122 +1,152 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-// import DealershipImage from "../../../public/images/dealership/showroom.jpg"; // Update with your actual image path
+import DealershipImage from "../../../public/images/showroomdealer.png";
 import Button from "../atoms/Button";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "motion/react";
-import PinIcon from "../../../public/icons/pin.svg"; // Update with your actual icon path
+import { m, useReducedMotion, type Variants } from "motion/react";
+import PinIcon from "../../../public/icons/pin.svg";
+
+const contentItems: string[] = [
+  "Think about your everyday routes, weekend plans, and the distances you expect to cover.",
+  "Consider the riding position, handling, and features that match your experience and priorities.",
+  "Shortlist the motorcycles that interest you, then book a test ride to discover how they feel on the road.",
+];
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+const GRADIENT = "bg-linear-to-r from-[#043898] via-[#079902] to-[#170041]";
 
 const DealershipSection = () => {
-  const contentItems = [
-    "Lorem ipsum dolor sit amet consectetur. Habitant vestibulum vitae amet habitasse semper.",
-    "Lorem ipsum dolor sit amet consectetur. Egestas congue mattis ut placerat vitae amet suspendisse fermentum velit. Nibh dolor nunc id tristique sit.",
-    "Lorem ipsum dolor sit amet consectetur. Hac netus consectetur amet quisque scelerisque facilisi. Ultrices lectus viverra pharetra commodo."
-  ];
+  const reduce = useReducedMotion();
+  const viewport = { once: true, amount: 0.25 };
+
+  // Simple one-off reveal for heading / paragraph / button / image
+  const reveal = (delay = 0, y = 24, x = 0) => ({
+    initial: { opacity: 0, y: reduce ? 0 : y, x: reduce ? 0 : x },
+    whileInView: { opacity: 1, y: 0, x: 0 },
+    viewport,
+    transition: {
+      duration: reduce ? 0.2 : 0.6,
+      delay: reduce ? 0 : delay,
+      ease: EASE,
+    },
+  });
+
+  // Card enters first, then its children (list items) stagger in
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: reduce ? 0 : 24 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reduce ? 0.2 : 0.6,
+        ease: EASE,
+        delayChildren: reduce ? 0 : 0.35,
+        staggerChildren: reduce ? 0 : 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: reduce ? 0 : 20 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: reduce ? 0.2 : 0.5, ease: EASE },
+    },
+  };
 
   return (
-    <section className="flex md:justify-start justify-center md:py-16 w-full overflow-hidden bg-[#F5F5F5]">
-      <div className="shadow-2xl w-[92%] relative pb-20 bg-white">
-        <div className="flex md:flex-row justify-center flex-col md:p-8 px-3 py-5">
-          {/* Left - Content */}
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="md:w-1/2 w-full max-w-[620px] md:p-2 relative flex flex-col md:gap-y-6 gap-y-4 md:pr-16"
+    <section
+      aria-labelledby="dealership-heading"
+      className="relative w-full overflow-x-clip bg-white pb-12 md:pb-16 xl:pb-36 xl:pt-24"
+    >
+      {/* Layer 1: 1440 frame. At xl+ it's a fixed 706px canvas for the overlapping layers */}
+      <div className="relative mx-auto max-w-[1440px] xl:h-[706px]">
+        {/* Left column */}
+        <div className="px-4 pt-12 md:px-10 md:pt-16 xl:pl-16 xl:pr-0 xl:pt-10">
+          <m.h2
+            id="dealership-heading"
+            {...reveal(0)}
+            className="mb-5 max-w-[486px] font-roboto_condensed text-[32px] font-bold leading-[1.17] text-[#1959AC] md:text-[42px]"
           >
-            {/* Header */}
-            <div className="space-y-4">
-              <h2 className="text-[#1959AC] md:text-[40px] text-[28px] font-bold leading-tight">
-                LOREM IPSUM DOLOR SIT AMET CONSECTETEUR. DIGNISSIM TELLUS.
-              </h2>
-              <p className="md:text-para1desktop text-para1mobile text-gray-700 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur. In malesuada morbi mi blandit
-                laoreet urna sapien quam pulvinar. Dolor aliquet est tortor tincidunt
-                ultricies feugiat mauris. Aliquam platea turpis porta nisl felis. Massa in
-                facilisis semper libero eget eu quisque bibendum platea. Tortor fames.
-              </p>
-            </div>
+            YOUR NEXT RIDE STARTS WITH THE RIGHT CHOICE
+          </m.h2>
 
-            {/* CTA Button */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex w-full md:justify-start justify-center mt-4"
-            >
-              <Button
-                buttonText={`Loerum Ipsum`}
-                buttonStyle={`font-inter bg-[#1959AC] rounded-[5px] md:text-para2desktop text-para1mobile text-white flex items-center gap-x-2 md:px-6 md:py-2.5 px-4 py-2`}
-                rightIcon={<FaArrowRight />}
-              />
-            </motion.div>
-
-            {/* Info Card */}
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-white shadow-lg rounded-lg p-6 mt-8 relative"
-            >
-              {/* Pin Icon */}
-              <div className="absolute -top-4 right-8">
-                <div className="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Lorem ipsum dolor sit
-              </h3>
-
-              <div className="space-y-4">
-                {contentItems.map((text, index) => (
-                  <motion.p
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
-                    className="text-gray-700 md:text-para1desktop text-para1mobile leading-relaxed"
-                  >
-                    {text}
-                  </motion.p>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right - Image */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0, filter: "blur(180px)" }}
-            whileInView={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:w-1/2 w-full md:mt-0 mt-6"
+          <m.p
+            {...reveal(0.15)}
+            className="mb-8 max-w-[612px] text-base leading-[25px] text-black xl:mb-10"
           >
-            {/* <Image
-              src={DealershipImage}
-              alt="dealership showroom"
-              className="w-full h-auto object-cover rounded-lg"
-              layout="responsive"
-              width={800}
-              height={600}
-            /> */}
-          </motion.div>
+            Every rider has different priorities. Explore the lineup, consider where you ride most, and focus on the comfort, performance, and features that suit your needs. Shortlist your favourites and take the next step with confidence.
+          </m.p>
+
+          <m.div {...reveal(0.3, 16)} className="w-fit">
+            <Button
+              rightIcon={<FaArrowRight aria-hidden="true" />}
+              buttonText="Explore Models"
+              buttonStyle="bg-[#1959AC] flex items-center gap-[10px] text-white text-sm font-semibold leading-[18px] px-6 py-[10px] rounded-[5px] shadow-md"
+            />
+          </m.div>
         </div>
-        <div className="bg-gradient-to-r from-[#043898] via-[#079902] to-[#170041] md:w-[96%] w-full md:h-5 h-3 absolute bottom-0"></div>
+
+        {/* Layer 2: Image. Stacked below xl, absolute at xl+ */}
+        <m.div
+          {...reveal(0.2, 0, 24)}
+          className="mt-10 px-4 md:px-10 xl:absolute xl:-top-[88px] xl:right-4 xl:mt-0 xl:w-[570px] xl:px-0"
+        >
+          <Image
+            src={DealershipImage}
+            alt="Dealership"
+            width={570}
+            height={570}
+            sizes="(min-width: 1280px) 570px, 100vw"
+            className="aspect-[4/3] h-auto w-full object-cover object-center md:aspect-[16/9] xl:aspect-square"
+          />
+        </m.div>
+
+        {/* Layer 3: Card wrapper. Overlaps image bottom below xl, absolute at xl+ */}
+        <div className="relative z-10 -mt-12 px-4 md:-mt-16 md:px-10 xl:absolute xl:left-16 xl:top-[433px] xl:mt-0 xl:w-[546px] xl:p-0">
+          {/* Mobile/tablet gradient strip, passing behind the card */}
+          <div
+            aria-hidden="true"
+            className={`${GRADIENT} absolute left-0 top-[64%] h-3 w-[92%] md:h-5 xl:hidden`}
+          />
+
+          <m.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewport}
+            className="relative z-10 bg-white px-5 py-8 shadow-[0_4px_24px_rgba(0,0,0,0.08)] md:px-10 md:py-10 xl:py-[50px]"
+          >
+            <Image
+              src={PinIcon}
+              alt=""
+              aria-hidden="true"
+              className="absolute right-4 top-2 h-10 w-10 md:right-8 xl:right-[33px] xl:top-[2px] xl:h-[50px] xl:w-[50px]"
+            />
+            <h3 className="mb-5 pr-12 text-xl font-semibold leading-7 text-neutral-900 xl:mb-[35px] xl:pr-0">
+              A FEW THINGS TO CONSIDER
+            </h3>
+            <ul className="flex flex-col gap-4">
+              {contentItems.map((item) => (
+                <m.li
+                  key={item}
+                  variants={itemVariants}
+                  className="text-base leading-[25px] text-neutral-800"
+                >
+                  {item}
+                </m.li>
+              ))}
+            </ul>
+          </m.div>
+        </div>
+
+        {/* Desktop gradient strip at the bottom of the 706px container */}
+        <div
+          aria-hidden="true"
+          className={`${GRADIENT} absolute bottom-0 left-0 z-0 hidden h-5 w-[88.75%] xl:block`}
+        />
       </div>
     </section>
   );

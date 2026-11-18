@@ -8,3 +8,10 @@ import { testimonials } from './testimonialData';
 
 
 export { modelOptions, experienceOptions, usageOptions, menuItems, featuresList, pointsFeaturesList, performanceCards, brands,testimonials };
+
+export type { NavigationItem, MenuLabel } from './menu';
+export type { FeatureItem } from './BikersFeatures';
+export type { PointFeature } from './PointsFeatures';
+export type { PerformanceCard } from './performanceCard';
+export type { SponsorBrand } from './sponsers';
+export type { Testimonial } from './testimonialData';

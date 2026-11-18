@@ -4,7 +4,7 @@ import { IoIosArrowDown, IoMdMenu } from "react-icons/io";
 import Button from '../../atoms/Button';
 import TrailorTradeLogo from '@/app/components/atoms/TrailorTradeLogo';
 import MobileSideMenu from './MobileSideMenu'; 
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import menuItems from '@/app/utils/data/menu';
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
       checkScroll();
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -69,7 +69,7 @@ const Navbar = () => {
 
                 <AnimatePresence>
                   {openDropdown === index && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -86,7 +86,7 @@ const Navbar = () => {
                           </p>
                         ))}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>

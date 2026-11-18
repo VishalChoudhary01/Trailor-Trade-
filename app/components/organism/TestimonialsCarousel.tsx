@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { testimonials } from "../../utils/data";
 import Button from "../atoms/Button";
 
@@ -133,7 +133,7 @@ const TestimonialsCarousel = () => {
       </div>
 
       <div className="overflow-hidden">
-        <motion.div
+        <m.div
           className="flex md:gap-6 gap-4 items-center"
           animate={{
             x: isMobile
@@ -207,6 +207,7 @@ const TestimonialsCarousel = () => {
                       src={testimonial.avatar}
                       alt={testimonial.name}
                       fill
+                      sizes="64px"
                       className="object-cover rounded-full"
                     />
                   </div>
@@ -228,7 +229,7 @@ const TestimonialsCarousel = () => {
               </div>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

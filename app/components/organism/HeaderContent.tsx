@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Define prop types using a plain interface
-interface HeaderContentProps {
+export interface HeaderContentProps {
   primaryContent: string;
   secondaryContent: string;
   descript?: string;

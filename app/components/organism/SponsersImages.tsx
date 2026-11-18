@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import brands from "@/app/utils/data/sponsers";
 
 const SponsersImages = () => {
@@ -15,13 +15,13 @@ const SponsersImages = () => {
       <div
         className={`text-center mb-6 flex justify-center font-roboto_condensed`}
       >
-        <motion.h2
+        <m.h2
          initial={{ opacity: 0, y: 20 }}
          whileInView={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.5, delay: 0.5 }}
         className="md:text-head1desktop max-w-[665px] leading-9 text-[30px] font-bold text-black uppercase">
           Trusted by Leading Motorcycle Brands.
-        </motion.h2>
+        </m.h2>
       </div>
 
       {/* Mobile View */}
@@ -97,7 +97,7 @@ const SponsersImages = () => {
       <div className="hidden md:flex flex-col items-center md:my-[115px] md:gap-y-9">
         <div className="flex justify-between md:w-[950px]">
           {brands.slice(0, 4).map((brand, index) => (
-            <motion.div
+            <m.div
             viewport={{once:true}}
               initial={{ opacity: 0,scale: 15 }}
               whileInView={{ opacity: 1 , scale: 1 }}
@@ -108,17 +108,17 @@ const SponsersImages = () => {
                 src={brand.image}
                 alt={brand.name}
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
-        <motion.div
+        <m.div
         initial={{ opacity: 0,y: 20 }}
         whileInView={{ opacity: 1 , y: 0 }}
         transition={{ duration: 0.1 }}  
         className="flex justify-between md:w-[1112px]">
           {brands.slice(4, 8).map((brand, index) => (
-            <motion.div
+            <m.div
              viewport={{once:true}}
               initial={{ opacity: 0,scale: 10 }}
               whileInView={{ opacity: 1 , scale: 1 }}
@@ -128,17 +128,17 @@ const SponsersImages = () => {
                 src={brand.image}
                 alt={brand.name}
               />
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
         initial={{ opacity: 0,y: 20 }}
         whileInView={{ opacity: 1 , y: 0 }}
         transition={{ duration: 0.1 }} 
         className="flex justify-between md:w-[1040px]">
           {brands.slice(8, 12).map((brand, index) => (
-            <motion.div
+            <m.div
             viewport={{once:true}}
               initial={{ opacity: 0,scale: 10 }}
               whileInView={{ opacity: 1 , scale: 1 }}
@@ -148,9 +148,9 @@ const SponsersImages = () => {
                 src={brand.image}
                 alt={brand.name}
               />
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
