@@ -6,7 +6,7 @@ Welcome to **Trailor Ride**, a modern and high-performance motorcycle e-commerce
 
 ## 🚀 Live Demo
 
-[View Live Site](https://trailor-ride.vercel.app) | [GitHub Repository](https://github.com/VishalChoudhary01/Trailor-Trade-.git)
+[View Live Site](https://trailor-trade.vercel.app) 
 
 ## 📖 Project Overview
 
